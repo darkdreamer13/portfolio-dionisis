@@ -12,6 +12,13 @@ const productionImages = [
   "/assets/production-food.png",
 ];
 
+const MORE_WORK_LOGOS: Record<string, string> = {
+  "Pralina Pastry": "/assets/more-work/pralina.jpeg",
+  "CrazyBloom": "/assets/more-work/crazybloom.jpeg",
+  "Ipsipetis Travel": "/assets/more-work/ipsipetis.png",
+  "PHAOS": "/assets/more-work/phaos.jpeg",
+};
+
 const EMAIL_HREF = "mailto:geo178@hotmail.com";
 const PHONE_HREF = "tel:+306973635835";
 const LINKEDIN_HREF = "https://www.linkedin.com/in/diliopoulos/";
@@ -279,8 +286,13 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
         <div className="more-work-grid">
           {copy.moreWork.items.map(([name, descriptor]) => (
             <article key={name}>
-              <strong>{name}</strong>
-              <span>{descriptor}</span>
+              <div className="more-work-logo" aria-hidden="true">
+                <img src={MORE_WORK_LOGOS[name]} alt="" />
+              </div>
+              <div className="more-work-copy">
+                <strong>{name}</strong>
+                <span>{descriptor}</span>
+              </div>
             </article>
           ))}
         </div>
