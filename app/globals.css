@@ -25,7 +25,7 @@ body {
   margin: 0;
   background: var(--color-bg-base);
   color: var(--color-text-primary);
-  font-family: var(--font-geist), Arial, sans-serif;
+  font-family: var(--font-geist-sans), Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
