@@ -328,6 +328,37 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
         </article>
       </section>
 
+      <section className="section more-work">
+        <div className="section-heading">
+          <div className="eyebrow">{copy.moreWork.eyebrow}</div>
+          <h2>{copy.moreWork.title}</h2>
+        </div>
+        <div className="more-work-grid">
+          {copy.moreWork.items.map(([name, descriptor], index) => {
+            const project = moreWorkCases[index];
+            return (
+              <button
+                key={name}
+                type="button"
+                className="more-work-item"
+                onClick={() => openMoreWork(project.id)}
+                aria-label={name + " — " + descriptor}
+              >
+                <div className="more-work-logo" aria-hidden="true">
+                  <img src={MORE_WORK_LOGOS[name]} alt="" />
+                </div>
+                <div className="more-work-copy">
+                  <strong>{name}</strong>
+                  <span>{descriptor}</span>
+                </div>
+                <span className="more-work-arrow" aria-hidden="true">↗</span>
+              </button>
+            );
+          })}
+        </div>
+      </section>
+
+
       <section className="about-tools" id="about">
         <article className="about-block">
           <div className="eyebrow">{copy.about.eyebrow}</div>
@@ -361,37 +392,6 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
           </div>
         </article>
       </section>
-
-      <section className="section more-work">
-        <div className="section-heading">
-          <div className="eyebrow">{copy.moreWork.eyebrow}</div>
-          <h2>{copy.moreWork.title}</h2>
-        </div>
-        <div className="more-work-grid">
-          {copy.moreWork.items.map(([name, descriptor], index) => {
-            const project = moreWorkCases[index];
-            return (
-              <button
-                key={name}
-                type="button"
-                className="more-work-item"
-                onClick={() => openMoreWork(project.id)}
-                aria-label={name + " — " + descriptor}
-              >
-                <div className="more-work-logo" aria-hidden="true">
-                  <img src={MORE_WORK_LOGOS[name]} alt="" />
-                </div>
-                <div className="more-work-copy">
-                  <strong>{name}</strong>
-                  <span>{descriptor}</span>
-                </div>
-                <span className="more-work-arrow" aria-hidden="true">↗</span>
-              </button>
-            );
-          })}
-        </div>
-      </section>
-
 
       <section className="final-cta" id="contact">
         <div>
