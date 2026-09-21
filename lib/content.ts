@@ -1188,3 +1188,161 @@ export const profileModalCopy: Record<Locale, Record<ProfileModalMode, ProfileMo
     },
   },
 };
+
+
+export type ProductionModalContent = {
+  eyebrow: string;
+  title: string;
+  intro: string;
+  modes: {
+    title: string;
+    description: string;
+    items: string[];
+  }[];
+  responsibilityTitle: string;
+  responsibilityBody: string;
+  responsibilityFlow: string[];
+  collaborationTitle: string;
+  collaborationBody: string;
+  examplesTitle: string;
+  examplesBody: string;
+  exampleRole: string;
+  workflow: string[];
+  closing: string;
+  watchLabel: string;
+};
+
+export const productionModalCopy: Record<Locale, ProductionModalContent> = {
+  el: {
+    eyebrow: "CONTENT & PRODUCTION",
+    title: "Η παραγωγή προσαρμόζεται στην ιδέα. Όχι το αντίστροφο.",
+    intro:
+      "Δεν χρειάζεται κάθε video μεγάλη παραγωγή. Κάποιες φορές το σωστό format είναι ένα αυθεντικό UGC video γυρισμένο με mobile setup. Άλλες φορές το project απαιτεί επαγγελματική κάμερα, φωτισμό, drone, ηθοποιούς ή ακόμη και σκηνοθέτη. Το production setup επιλέγεται με βάση τον στόχο του περιεχομένου.",
+    modes: [
+      {
+        title: "MOBILE / UGC PRODUCTION",
+        description:
+          "Γρήγορη, ευέλικτη παραγωγή για direct-to-camera, UGC και vertical short-form content.",
+        items: [
+          "Concept & hook",
+          "Scriptwriting",
+          "Teleprompter / direct-to-camera",
+          "Mobile shooting setup",
+          "Product demonstration",
+          "UGC / presenter videos",
+          "Short-form vertical content",
+          "Direction & retakes",
+        ],
+      },
+      {
+        title: "FULL PRODUCTION",
+        description:
+          "Όταν η ιδέα χρειάζεται μεγαλύτερη παραγωγή, οργανώνεται η κατάλληλη ομάδα και ο εξοπλισμός.",
+        items: [
+          "Creative concept",
+          "Scripts & shot lists",
+          "Professional camera crew",
+          "Photography",
+          "Lighting & sound",
+          "Drone",
+          "Actors / creators",
+          "Director όπου χρειάζεται",
+          "Production coordination",
+          "Post-production supervision",
+        ],
+      },
+    ],
+    responsibilityTitle: "Τι αναλαμβάνω προσωπικά",
+    responsibilityBody:
+      "Από τη στρατηγική και το concept μέχρι το script, το brief, τη σκηνοθετική κατεύθυνση, το mobile production όταν ταιριάζει στο format, τον ποιοτικό έλεγχο και τον σχεδιασμό της διανομής.",
+    responsibilityFlow: [
+      "Strategy",
+      "Concept",
+      "Research",
+      "Hook",
+      "Script",
+      "Brief",
+      "Direction",
+      "Production",
+      "Quality Control",
+      "Distribution",
+    ],
+    collaborationTitle: "Όταν χρειάζεται μεγαλύτερη παραγωγή",
+    collaborationBody:
+      "Στήνω το brief και συντονίζω τους κατάλληλους συνεργάτες. Ανάλογα με το project μπορεί να συμμετέχουν videographer, photographer, drone operator, editor, creator, actor ή director. Ο στόχος είναι να χρησιμοποιούνται οι σωστοί άνθρωποι και ο σωστός εξοπλισμός για την ιδέα — όχι να μεγαλώνει η παραγωγή χωρίς λόγο.",
+    examplesTitle: "Selected UGC Work",
+    examplesBody:
+      "Στα παρακάτω παραδείγματα ανέλαβα ολόκληρη τη διαδικασία μόνος μου, από το concept και το script μέχρι τη λήψη, την παρουσίαση στην κάμερα, τη σκηνοθετική κατεύθυνση και το τελικό edit.",
+    exampleRole: "Concept · Script · Shooting · On-camera · Direction · Editing",
+    workflow: ["Idea", "Hook", "Script", "Production", "Edit", "Distribution", "Learn"],
+    closing:
+      "Το σωστό video δεν ξεκινά από την κάμερα. Ξεκινά από το τι πρέπει να κάνει ο θεατής όταν τελειώσει.",
+    watchLabel: "Watch on Instagram ↗",
+  },
+  en: {
+    eyebrow: "CONTENT & PRODUCTION",
+    title: "Production adapts to the idea. Not the other way around.",
+    intro:
+      "Not every video needs a large production. Sometimes the right format is authentic UGC shot with a mobile setup. Other projects need professional cameras, lighting, drone, actors or even a director. The production setup is chosen around the objective of the content.",
+    modes: [
+      {
+        title: "MOBILE / UGC PRODUCTION",
+        description:
+          "Fast, flexible production for direct-to-camera, UGC and vertical short-form content.",
+        items: [
+          "Concept & hook",
+          "Scriptwriting",
+          "Teleprompter / direct-to-camera",
+          "Mobile shooting setup",
+          "Product demonstration",
+          "UGC / presenter videos",
+          "Short-form vertical content",
+          "Direction & retakes",
+        ],
+      },
+      {
+        title: "FULL PRODUCTION",
+        description:
+          "When an idea needs a larger production, the right team and equipment are brought together.",
+        items: [
+          "Creative concept",
+          "Scripts & shot lists",
+          "Professional camera crew",
+          "Photography",
+          "Lighting & sound",
+          "Drone",
+          "Actors / creators",
+          "Director when needed",
+          "Production coordination",
+          "Post-production supervision",
+        ],
+      },
+    ],
+    responsibilityTitle: "What I handle personally",
+    responsibilityBody:
+      "From strategy and concept to the script, brief, creative direction, mobile production when it fits the format, quality control and distribution planning.",
+    responsibilityFlow: [
+      "Strategy",
+      "Concept",
+      "Research",
+      "Hook",
+      "Script",
+      "Brief",
+      "Direction",
+      "Production",
+      "Quality Control",
+      "Distribution",
+    ],
+    collaborationTitle: "When the production needs to scale",
+    collaborationBody:
+      "I build the brief and coordinate the right collaborators. Depending on the project, that can include a videographer, photographer, drone operator, editor, creator, actor or director. The goal is to use the right people and equipment for the idea — not to make production larger for its own sake.",
+    examplesTitle: "Selected UGC Work",
+    examplesBody:
+      "For the examples below, I handled the entire process independently, from concept and script to shooting, on-camera performance, direction and final edit.",
+    exampleRole: "Concept · Script · Shooting · On-camera · Direction · Editing",
+    workflow: ["Idea", "Hook", "Script", "Production", "Edit", "Distribution", "Learn"],
+    closing:
+      "The right video does not start with the camera. It starts with what the viewer should do when it ends.",
+    watchLabel: "Watch on Instagram ↗",
+  },
+};

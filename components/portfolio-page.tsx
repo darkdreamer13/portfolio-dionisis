@@ -5,6 +5,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import ProjectModal from "@/components/project-modal";
 import MoreWorkModal from "@/components/more-work-modal";
 import ProfileModal from "@/components/profile-modal";
+import ProductionModal from "@/components/production-modal";
 import { MobileCapabilities, MobileProcess, MobileSelectedWork } from "@/components/mobile-portfolio-sections";
 import { moreWorkCasesByLocale, projectsByLocale, siteCopy, type Locale } from "@/lib/content";
 
@@ -34,6 +35,7 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [selectedMoreWorkId, setSelectedMoreWorkId] = useState<string | null>(null);
   const [profileModal, setProfileModal] = useState<"about" | "thinking" | null>(null);
+  const [productionModalOpen, setProductionModalOpen] = useState(false);
 
   const selectedProject = useMemo(
     () => projects.find((project) => project.id === selectedId) ?? null,
@@ -299,6 +301,13 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
             <div className="eyebrow">{copy.production.eyebrow}</div>
             <h2>{copy.production.title}</h2>
             <p>{copy.production.body}</p>
+            <button
+              type="button"
+              className="production-open"
+              onClick={() => setProductionModalOpen(true)}
+            >
+              {locale === "el" ? "Δείτε πώς δουλεύω →" : "See how I work →"}
+            </button>
           </div>
           <div className="production-images" aria-hidden="true">
             {productionImages.map((src, index) => (
@@ -441,6 +450,13 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
           mode={profileModal}
           locale={locale}
           onClose={() => setProfileModal(null)}
+        />
+      ) : null}
+
+      {productionModalOpen ? (
+        <ProductionModal
+          locale={locale}
+          onClose={() => setProductionModalOpen(false)}
         />
       ) : null}
     </main>
