@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 import "./globals.css";
-
-const geist = Geist({ subsets: ["latin", "greek"], variable: "--font-geist" });
-const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" });
 
 export const metadata: Metadata = {
   title: "Dionisios Iliopoulos — Digital Strategy · Content · Web · AI",
@@ -13,8 +11,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="el" className={geist.variable + " " + geistMono.variable}>
-      <body>{children}</body>
+    <html lang="el" className={GeistSans.variable + " " + GeistMono.variable}>
+      <body className={GeistSans.className}>{children}</body>
     </html>
   );
 }
