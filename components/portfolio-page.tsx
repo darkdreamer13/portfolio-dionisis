@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import ProjectModal from "@/components/project-modal";
+import { MobileCapabilities, MobileProcess, MobileSelectedWork } from "@/components/mobile-portfolio-sections";
 import { projectsByLocale, siteCopy, type Locale } from "@/lib/content";
 
 const productionImages = [
@@ -10,6 +11,11 @@ const productionImages = [
   "/assets/production-sea.png",
   "/assets/production-food.png",
 ];
+
+const EMAIL_HREF = "mailto:geo178@hotmail.com";
+const PHONE_HREF = "tel:+306973635835";
+const LINKEDIN_HREF = "https://www.linkedin.com/in/diliopoulos/";
+const UPWORK_HREF = "https://www.upwork.com/freelancers/~0191fc300963a39cd2?mp_source=share";
 
 export default function PortfolioPage({ locale }: { locale: Locale }) {
   const copy = siteCopy[locale];
@@ -57,7 +63,7 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
           <Link className="language-switch" href={locale === "el" ? "/en" : "/el"}>
             {locale === "el" ? "EN" : "EL"}
           </Link>
-          <a className="button button-primary header-cta" href="#contact">
+          <a className="button button-primary header-cta" href={EMAIL_HREF}>
             {copy.nav.talk}
           </a>
         </div>
@@ -73,7 +79,7 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
             <a className="button button-primary" href="#work">
               {copy.hero.primary}
             </a>
-            <a className="button button-secondary" href="#contact">
+            <a className="button button-secondary" href={EMAIL_HREF}>
               {copy.hero.secondary}
             </a>
           </div>
@@ -109,7 +115,8 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
         </div>
       </section>
 
-      <section className="section section-base selected-work" id="work">
+      <div id="work" className="section-anchor-wrap">
+      <section className="section section-base selected-work desktop-only">
         <div className="section-heading">
           <div className="eyebrow">{copy.selected.eyebrow}</div>
           <h2>{copy.selected.title}</h2>
@@ -121,6 +128,7 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
                 key={project.id}
                 type="button"
                 className="project-card"
+                data-project={project.id}
                 onClick={() => openProject(project.id)}
                 aria-label={project.title + " — " + project.tagline}
               >
@@ -147,8 +155,11 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
           </aside>
         </div>
       </section>
+      <MobileSelectedWork locale={locale} copy={copy.selected} projects={projects} onOpen={openProject} />
+      </div>
 
-      <section className="section capabilities" id="capabilities">
+      <div id="capabilities" className="section-anchor-wrap">
+      <section className="section capabilities desktop-only">
         <div className="section-heading section-heading-inline">
           <div>
             <div className="eyebrow">{copy.capabilities.eyebrow}</div>
@@ -166,8 +177,10 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
           ))}
         </div>
       </section>
+      <MobileCapabilities locale={locale} copy={copy.capabilities} />
+      </div>
 
-      <section className="section process">
+      <section className="section process desktop-only">
         <div className="section-heading">
           <div className="eyebrow">{copy.process.eyebrow}</div>
           <h2>{copy.process.title}</h2>
@@ -188,6 +201,7 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
           </div>
         </div>
       </section>
+      <MobileProcess locale={locale} copy={copy.process} />
 
       <section className="ai-section">
         <div className="ai-orb" aria-hidden="true" />
@@ -272,20 +286,6 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
         </div>
       </section>
 
-      <section className="section selected-results">
-        <div className="section-heading">
-          <div className="eyebrow">{copy.results.eyebrow}</div>
-          <h2>{copy.results.title}</h2>
-        </div>
-        <div className="results-grid">
-          {copy.results.items.map(([metric, description]) => (
-            <article key={metric + description}>
-              <strong>{metric}</strong>
-              <span>{description}</span>
-            </article>
-          ))}
-        </div>
-      </section>
 
       <section className="final-cta" id="contact">
         <div>
@@ -293,9 +293,14 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
           <h2>{copy.cta.title}</h2>
           <p>{copy.cta.body}</p>
         </div>
-        <a className="button button-primary" href="https://promoters.gr" target="_blank" rel="noreferrer">
-          {copy.cta.button}
-        </a>
+        <div className="final-cta-actions">
+          <a className="button button-primary" href={EMAIL_HREF}>
+            {copy.cta.button}
+          </a>
+          <a className="button button-call" href={PHONE_HREF}>
+            {locale === "el" ? "Κλήση" : "Call"}
+          </a>
+        </div>
         <strong>{copy.cta.closing}</strong>
       </section>
 
@@ -306,7 +311,12 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
         </div>
         <div className="footer-meta">
           <span>{copy.footer.location}</span>
-          <span>{copy.footer.links}</span>
+          <div className="footer-links">
+            <a href={LINKEDIN_HREF} target="_blank" rel="noreferrer">LinkedIn</a>
+            <span aria-hidden="true">·</span>
+            <a href={UPWORK_HREF} target="_blank" rel="noreferrer">Upwork</a>
+          </div>
+          <a className="footer-phone" href={PHONE_HREF}>+30 697 363 5835</a>
         </div>
       </footer>
 
