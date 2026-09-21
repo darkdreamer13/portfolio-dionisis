@@ -25,7 +25,7 @@ body {
   margin: 0;
   background: var(--color-bg-base);
   color: var(--color-text-primary);
-  font-family: var(--font-geist-sans), Arial, sans-serif;
+  font-family: var(--font-inter), Inter, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -1965,4 +1965,55 @@ main {
   .final-cta-actions { width: 100%; margin-top: auto; }
   .final-cta-actions .button { width: 100%; margin: 0; }
   .footer-links { flex-wrap: wrap; }
+}
+
+
+/* Typography + More Work logo pass */
+.more-work-grid article {
+  flex-direction: row;
+  align-items: center;
+  gap: 14px;
+}
+
+.more-work-logo {
+  display: flex;
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background: #fff;
+}
+
+.more-work-logo img {
+  width: 82%;
+  height: 82%;
+  object-fit: contain;
+}
+
+.more-work-copy {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 2px;
+}
+
+@media (max-width: 760px) {
+  .more-work-grid article {
+    min-height: 74px;
+    justify-content: flex-start;
+  }
+
+  .more-work-logo {
+    width: 46px;
+    height: 46px;
+    flex-basis: 46px;
+  }
+
+  .more-work-copy {
+    flex: 1;
+  }
 }
