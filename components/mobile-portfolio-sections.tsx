@@ -11,11 +11,13 @@ export function MobileSelectedWork({
   copy,
   projects,
   onOpen,
+  onOpenThinking,
 }: {
   locale: Locale;
   copy: PortfolioCopy["selected"];
   projects: ProjectCase[];
   onOpen: (id: string) => void;
+  onOpenThinking: () => void;
 }) {
   const [featuredIndex, setFeaturedIndex] = useState(0);
   const featured = projects[featuredIndex];
@@ -74,6 +76,14 @@ export function MobileSelectedWork({
           {locale === "el" ? "Δείτε το project →" : "View project →"}
         </button>
       </div>
+
+      <button type="button" className="mobile-thinking-cta" onClick={onOpenThinking}>
+        <span>
+          <small>{copy.thinkingEyebrow}</small>
+          <strong>{copy.thinkingTitle}</strong>
+        </span>
+        <b aria-hidden="true">→</b>
+      </button>
     </section>
   );
 }

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import ProjectModal from "@/components/project-modal";
 import MoreWorkModal from "@/components/more-work-modal";
+import ProfileModal from "@/components/profile-modal";
 import { MobileCapabilities, MobileProcess, MobileSelectedWork } from "@/components/mobile-portfolio-sections";
 import { moreWorkCasesByLocale, projectsByLocale, siteCopy, type Locale } from "@/lib/content";
 
@@ -32,6 +33,7 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
   const moreWorkCases = moreWorkCasesByLocale[locale];
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [selectedMoreWorkId, setSelectedMoreWorkId] = useState<string | null>(null);
+  const [profileModal, setProfileModal] = useState<"about" | "thinking" | null>(null);
 
   const selectedProject = useMemo(
     () => projects.find((project) => project.id === selectedId) ?? null,
@@ -203,16 +205,34 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
               </button>
             ))}
           </div>
-          <aside className="thinking-card">
+          <aside
+            className="thinking-card thinking-card-interactive"
+            role="button"
+            tabIndex={0}
+            onClick={() => setProfileModal("thinking")}
+            onKeyDown={(event) => {
+              if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                setProfileModal("thinking");
+              }
+            }}
+          >
             <div className="eyebrow inverse-eyebrow">{copy.selected.thinkingEyebrow}</div>
             <div className="thinking-rule" />
             <h3>{copy.selected.thinkingTitle}</h3>
             <p>{copy.selected.thinkingBody}</p>
             <strong>{copy.selected.thinkingClosing}</strong>
+            <span className="thinking-open">{copy.selected.thinkingOpen}</span>
           </aside>
         </div>
       </section>
-      <MobileSelectedWork locale={locale} copy={copy.selected} projects={projects} onOpen={openProject} />
+      <MobileSelectedWork
+        locale={locale}
+        copy={copy.selected}
+        projects={projects}
+        onOpen={openProject}
+        onOpenThinking={() => setProfileModal("thinking")}
+      />
       </div>
 
       <div id="capabilities" className="section-anchor-wrap">
@@ -314,13 +334,22 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
           <h2>{copy.about.title}</h2>
           <p>{copy.about.body}</p>
           <p className="about-cv-prompt">{copy.about.cvPrompt}</p>
-          <a
-            href={CV_HREF}
-            className="button button-secondary"
-            download="Dionisios_Iliopoulos_CV.pdf"
-          >
-            {copy.about.button}
-          </a>
+          <div className="about-actions">
+            <a
+              href={CV_HREF}
+              className="button button-secondary"
+              download="Dionisios_Iliopoulos_CV.pdf"
+            >
+              {copy.about.button}
+            </a>
+            <button
+              type="button"
+              className="about-story-button"
+              onClick={() => setProfileModal("about")}
+            >
+              {copy.about.storyButton}
+            </button>
+          </div>
         </article>
         <article className="tools-block">
           <div className="eyebrow">{copy.tools.eyebrow}</div>
@@ -405,6 +434,14 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
 
       {selectedMoreWork ? (
         <MoreWorkModal project={selectedMoreWork} locale={locale} onClose={closeMoreWork} />
+      ) : null}
+
+      {profileModal ? (
+        <ProfileModal
+          mode={profileModal}
+          locale={locale}
+          onClose={() => setProfileModal(null)}
+        />
       ) : null}
     </main>
   );

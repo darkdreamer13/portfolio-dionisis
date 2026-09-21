@@ -2613,3 +2613,486 @@ main {
     overflow: visible;
   }
 }
+
+
+/* About / How I Think editorial modals */
+.thinking-card-interactive {
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.thinking-card-interactive:hover,
+.thinking-card-interactive:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px rgba(17, 24, 39, 0.16);
+  outline: none;
+}
+
+.thinking-open {
+  display: inline-block;
+  margin-top: 28px;
+  color: #8fb1ff;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.about-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.about-story-button {
+  min-height: 45px;
+  padding: 10px 0;
+  border: 0;
+  background: transparent;
+  color: var(--color-accent);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.mobile-thinking-cta {
+  display: flex;
+  width: 100%;
+  min-height: 92px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 18px;
+  padding: 18px;
+  border: 0;
+  border-radius: 13px;
+  background: var(--color-bg-dark);
+  color: white;
+  text-align: left;
+}
+
+.mobile-thinking-cta span {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.mobile-thinking-cta small {
+  color: #8fb1ff;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 9px;
+  letter-spacing: 0.8px;
+}
+
+.mobile-thinking-cta strong {
+  max-width: 280px;
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.mobile-thinking-cta b {
+  color: #8fb1ff;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.profile-backdrop {
+  z-index: 180;
+}
+
+.profile-modal {
+  width: min(980px, 100%);
+  max-height: calc(100dvh - 48px);
+  overflow: auto;
+  border-radius: 18px;
+  box-shadow: 0 32px 90px rgba(0, 0, 0, 0.32);
+  overscroll-behavior: contain;
+  animation: modalRise 220ms ease-out;
+}
+
+.profile-modal-about {
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-base);
+  color: var(--color-text-primary);
+}
+
+.profile-modal-thinking {
+  border: 1px solid rgba(255,255,255,.12);
+  background: var(--color-bg-dark);
+  color: var(--color-text-inverse);
+}
+
+.profile-modal-header {
+  position: sticky;
+  z-index: 5;
+  top: 0;
+  display: flex;
+  min-height: 60px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 18px 10px 28px;
+  border-bottom: 1px solid var(--color-border);
+  background: rgba(255,255,255,.95);
+  backdrop-filter: blur(12px);
+}
+
+.profile-modal-thinking .profile-modal-header {
+  border-color: rgba(255,255,255,.12);
+  background: rgba(16,20,26,.94);
+}
+
+.profile-close-dark {
+  border-color: rgba(255,255,255,.18);
+  background: rgba(255,255,255,.06);
+}
+
+.profile-close-dark span:last-child {
+  color: #c7cdd7;
+}
+
+.profile-modal-body {
+  padding: 42px;
+}
+
+.profile-modal-body > h2 {
+  max-width: 780px;
+  margin: 0;
+  font-size: clamp(42px, 5vw, 62px);
+  line-height: 1.02;
+  letter-spacing: -1.4px;
+}
+
+.profile-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 26px;
+  margin-top: 30px;
+  padding: 26px 0;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.profile-modal-thinking .profile-intro {
+  border-color: rgba(255,255,255,.14);
+}
+
+.profile-intro p {
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-size: 17px;
+  line-height: 27px;
+}
+
+.profile-modal-thinking .profile-intro p {
+  color: #c7cdd7;
+}
+
+.profile-timeline {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.profile-timeline article {
+  min-height: 220px;
+  padding: 18px;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background: white;
+}
+
+.profile-timeline article > span,
+.thinking-principles article > span {
+  color: var(--color-accent);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 10px;
+  letter-spacing: .8px;
+}
+
+.profile-timeline h3,
+.thinking-principles h3 {
+  margin: 28px 0 0;
+  font-size: 18px;
+  line-height: 23px;
+}
+
+.profile-timeline p,
+.thinking-principles p {
+  margin: 10px 0 0;
+  color: var(--color-text-secondary);
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.profile-today {
+  margin-top: 28px;
+  padding: 24px;
+  border-radius: 13px;
+  background: white;
+}
+
+.profile-today p {
+  margin: 10px 0 0;
+  color: var(--color-text-secondary);
+  font-size: 16px;
+  line-height: 25px;
+}
+
+.profile-facts {
+  display: grid;
+  grid-template-columns: 1.8fr repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.profile-facts article {
+  padding: 15px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background: white;
+}
+
+.profile-facts span {
+  display: block;
+  color: var(--color-text-secondary);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 10px;
+  letter-spacing: .6px;
+  text-transform: uppercase;
+}
+
+.profile-facts strong {
+  display: block;
+  margin-top: 6px;
+  font-size: 13px;
+  line-height: 19px;
+}
+
+.profile-closing {
+  margin-top: 30px;
+  padding: 24px 28px;
+  border-left: 4px solid var(--color-accent);
+  background: white;
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 31px;
+}
+
+.profile-modal-thinking .profile-closing {
+  background: rgba(255,255,255,.06);
+}
+
+.profile-links {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  margin-top: 18px;
+}
+
+.profile-links > a:not(.button) {
+  color: var(--color-accent);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.thinking-principles {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.thinking-principles article {
+  min-height: 210px;
+  padding: 20px;
+  border: 1px solid rgba(255,255,255,.13);
+  border-radius: 12px;
+  background: rgba(255,255,255,.04);
+}
+
+.thinking-principles article:last-child {
+  grid-column: 1 / -1;
+  min-height: 150px;
+}
+
+.thinking-principles h3 {
+  color: white;
+}
+
+.thinking-principles p {
+  color: #c7cdd7;
+}
+
+.thinking-process {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0,1fr));
+  gap: 12px;
+  margin-top: 34px;
+  padding-top: 12px;
+}
+
+.thinking-process-line {
+  position: absolute;
+  left: 22px;
+  right: 22px;
+  top: 28px;
+  height: 1px;
+  background: rgba(255,255,255,.18);
+}
+
+.thinking-process > div:not(.thinking-process-line) {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.thinking-process span {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: white;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 10px;
+}
+
+.thinking-process strong {
+  font-size: 13px;
+}
+
+.thinking-statement {
+  margin: 34px 0 0;
+  padding: 22px 24px;
+  border-left: 3px solid var(--color-accent);
+  background: rgba(255,255,255,.06);
+  color: #f8fafc;
+  font-size: 19px;
+  line-height: 28px;
+}
+
+@media (max-width: 760px) {
+  .about-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .about-actions .button,
+  .about-story-button {
+    width: 100%;
+  }
+
+  .about-story-button {
+    min-height: 42px;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background: white;
+  }
+
+  .profile-backdrop {
+    align-items: stretch;
+    padding: 0;
+  }
+
+  .profile-modal {
+    width: 100%;
+    height: 100dvh;
+    max-height: 100dvh;
+    border: 0;
+    border-radius: 0;
+  }
+
+  .profile-modal-header {
+    padding: 9px 12px 9px 20px;
+  }
+
+  .profile-modal-body {
+    padding: 26px 20px 42px;
+  }
+
+  .profile-modal-body > h2 {
+    font-size: 39px;
+    line-height: 42px;
+  }
+
+  .profile-intro {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 24px;
+  }
+
+  .profile-intro p {
+    font-size: 15px;
+    line-height: 24px;
+  }
+
+  .profile-timeline,
+  .thinking-principles {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-timeline article,
+  .thinking-principles article,
+  .thinking-principles article:last-child {
+    min-height: auto;
+  }
+
+  .profile-timeline h3,
+  .thinking-principles h3 {
+    margin-top: 16px;
+  }
+
+  .profile-facts {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .profile-facts article:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .profile-links {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .profile-links .button,
+  .profile-links > a:not(.button) {
+    width: 100%;
+  }
+
+  .profile-links > a:not(.button) {
+    padding: 10px 0;
+  }
+
+  .thinking-process {
+    display: flex;
+    gap: 18px;
+    overflow-x: auto;
+    margin-right: -20px;
+    padding-right: 20px;
+    scrollbar-width: none;
+  }
+
+  .thinking-process::-webkit-scrollbar {
+    display: none;
+  }
+
+  .thinking-process-line {
+    left: 16px;
+    right: 20px;
+  }
+
+  .thinking-process > div:not(.thinking-process-line) {
+    min-width: 92px;
+  }
+
+  .profile-closing {
+    padding: 20px;
+    font-size: 20px;
+    line-height: 28px;
+  }
+}

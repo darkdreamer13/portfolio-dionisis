@@ -90,6 +90,7 @@ export const siteCopy = {
       thinkingBody:
         "Δεν χρειάζεται κάθε project περισσότερες υπηρεσίες. Χρειάζεται τις σωστές.",
       thinkingClosing: "Better Problems. Better Solutions.",
+      thinkingOpen: "Πώς δουλεύω →",
     },
     capabilities: {
       eyebrow: "CAPABILITIES",
@@ -142,6 +143,7 @@ export const siteCopy = {
         "Ξεκίνησα από το marketing και το περιεχόμενο, και σταδιακά εξελίχθηκα μέσα από ιστοσελίδες, analytics, integrations, custom εφαρμογές, automation και project leadership.",
       cvPrompt: "Θέλετε μια πιο συνοπτική εικόνα της εμπειρίας και των δεξιοτήτων μου;",
       button: "Λήψη βιογραφικού ↓",
+      storyButton: "Η διαδρομή μου →",
     },
     tools: {
       eyebrow: "TOOLS & TECHNOLOGY",
@@ -228,6 +230,7 @@ export const siteCopy = {
       thinkingBody:
         "Not every project needs more services. It needs the right ones.",
       thinkingClosing: "Better Problems. Better Solutions.",
+      thinkingOpen: "How I work →",
     },
     capabilities: {
       eyebrow: "CAPABILITIES",
@@ -280,6 +283,7 @@ export const siteCopy = {
         "I started in marketing and content, then expanded through websites, analytics, integrations, custom applications, automation and project leadership.",
       cvPrompt: "Prefer a concise overview of my experience and skills?",
       button: "Download CV ↓",
+      storyButton: "My journey →",
     },
     tools: {
       eyebrow: "TOOLS & TECHNOLOGY",
@@ -1010,4 +1014,177 @@ const englishMoreWorkCases: MoreWorkCase[] = [
 export const moreWorkCasesByLocale: Record<Locale, MoreWorkCase[]> = {
   el: greekMoreWorkCases,
   en: englishMoreWorkCases,
+};
+
+
+export type ProfileModalMode = "about" | "thinking";
+
+export type ProfileModalContent = {
+  eyebrow: string;
+  title: string;
+  intro: string[];
+  timeline?: { title: string; description: string }[];
+  today?: { title: string; body: string };
+  facts?: { label: string; value: string }[];
+  principles?: { number: string; title: string; body: string }[];
+  process?: string[];
+  statement?: string;
+  closing: string;
+};
+
+export const profileModalCopy: Record<Locale, Record<ProfileModalMode, ProfileModalContent>> = {
+  el: {
+    about: {
+      eyebrow: "ABOUT ME",
+      title: "Η διαδρομή πίσω από τα projects.",
+      intro: [
+        "Είμαι ο Διονύσης Ηλιόπουλος και ασχολούμαι με τη στρατηγική, την υλοποίηση και τη διαχείριση ψηφιακών projects. Ξεκίνησα από το marketing, αλλά στην πορεία η δουλειά μου επεκτάθηκε στο content, τα websites, την παραγωγή, το AI, τα integrations και την αυτοματοποίηση.",
+        "Αυτό που με ενδιαφέρει περισσότερο είναι να μπορώ να βλέπω ένα project συνολικά: από την επιχειρηματική ανάγκη και την εμπειρία του πελάτη μέχρι το τελικό αποτέλεσμα.",
+      ],
+      timeline: [
+        {
+          title: "Geoinformatics & Customer Experience",
+          description: "Σπουδές στη Γεωπληροφορική και πρώιμη επαγγελματική εμπειρία σε customer service, τεχνική υποστήριξη και διαχείριση ομάδων.",
+        },
+        {
+          title: "Sales & Communication",
+          description: "B2B και B2C πωλήσεις, διαπραγμάτευση, εξυπηρέτηση πελατών και καθημερινή επαφή με πραγματικές επιχειρηματικές ανάγκες.",
+        },
+        {
+          title: "Marketing & Content",
+          description: "Στρατηγική, social media, content, advertising, email marketing, branding και ανάπτυξη ψηφιακής παρουσίας.",
+        },
+        {
+          title: "Digital Products, AI & Project Leadership",
+          description: "Websites, custom εφαρμογές, integrations, analytics, AI workflows, automations και συντονισμός εξειδικευμένων συνεργατών.",
+        },
+      ],
+      today: {
+        title: "Σήμερα",
+        body: "Σήμερα συνδέω digital strategy, content, websites, custom applications, AI και automations μέσα από τη δουλειά μου στην Promoters. Όταν ένα project απαιτεί εξειδικευμένο design, performance, translation, photography ή video production, συντονίζω τους κατάλληλους συνεργάτες με σαφείς ρόλους και ευθύνη.",
+      },
+      facts: [
+        { label: "Education", value: "Geoinformatics & Surveying · University of Serres · 2001–2006" },
+        { label: "Greek", value: "Native" },
+        { label: "English", value: "Professional" },
+        { label: "German", value: "Conversational" },
+      ],
+      closing: "Marketing ήταν η αρχή. Η λογική, η περιέργεια και η ανάγκη να λύνω προβλήματα είναι αυτά που καθόρισαν την εξέλιξη.",
+    },
+    thinking: {
+      eyebrow: "HOW I THINK",
+      title: "Δεν ξεκινώ από την υπηρεσία. Ξεκινώ από το πρόβλημα.",
+      intro: [
+        "Κάθε project έχει διαφορετικές ανάγκες. Σε κάποιες περιπτώσεις χρειάζεται ένα website. Σε άλλες content, advertising, video, automation ή ένας συνδυασμός όλων αυτών.",
+        "Ο ρόλος μου είναι πρώτα να καταλάβω τι πρέπει να πετύχουμε και μετά να αποφασίσω τι πραγματικά χρειάζεται.",
+      ],
+      principles: [
+        {
+          number: "01",
+          title: "Problem before service",
+          body: "Δεν ξεκινάμε από το «να κάνουμε social media» ή «να φτιάξουμε website». Ξεκινάμε από το τι πρέπει να αλλάξει.",
+        },
+        {
+          number: "02",
+          title: "Strategy before tools",
+          body: "Next.js, WordPress, Meta, AI, Klaviyo ή οποιοδήποτε άλλο εργαλείο είναι μέσο. Όχι στρατηγική.",
+        },
+        {
+          number: "03",
+          title: "The right people, not all the people",
+          body: "Δεν χρειάζεται κάθε project μεγάλη ομάδα. Όταν χρειάζεται specialist, επιλέγεται ο κατάλληλος και ο ρόλος του είναι ξεκάθαρος.",
+        },
+        {
+          number: "04",
+          title: "AI assists. Humans decide.",
+          body: "Χρησιμοποιώ AI καθημερινά ως εργαλείο για έρευνα, παραγωγή και ταχύτητα. Δεν το αντιμετωπίζω ως μοναδική πηγή αλήθειας και η τελική απόφαση παραμένει ανθρώπινη.",
+        },
+        {
+          number: "05",
+          title: "Build, measure, improve",
+          body: "Ένα project δεν τελειώνει όταν δημοσιευτεί. Μετράμε, μαθαίνουμε και βελτιώνουμε.",
+        },
+      ],
+      process: ["Understand", "Research", "Strategy", "Design", "Deliver", "Improve"],
+      statement: "Δεν ξεκινώ από το ποιο εργαλείο θα χρησιμοποιήσουμε. Ξεκινώ από το τι πρέπει να λειτουργήσει καλύτερα.",
+      closing: "Better Problems. Better Solutions.",
+    },
+  },
+  en: {
+    about: {
+      eyebrow: "ABOUT ME",
+      title: "The journey behind the projects.",
+      intro: [
+        "I am Dionisios Iliopoulos and I work across the strategy, delivery and management of digital projects. I started in marketing, but over time my work expanded into content, websites, production, AI, integrations and automation.",
+        "What interests me most is seeing a project as a whole: from the business need and customer experience to the final outcome.",
+      ],
+      timeline: [
+        {
+          title: "Geoinformatics & Customer Experience",
+          description: "Studies in Geoinformatics and early professional experience in customer service, technical support and team leadership.",
+        },
+        {
+          title: "Sales & Communication",
+          description: "B2B and B2C sales, negotiation, customer care and daily exposure to real business needs.",
+        },
+        {
+          title: "Marketing & Content",
+          description: "Strategy, social media, content, advertising, email marketing, branding and digital presence.",
+        },
+        {
+          title: "Digital Products, AI & Project Leadership",
+          description: "Websites, custom applications, integrations, analytics, AI workflows, automation and coordination of specialist collaborators.",
+        },
+      ],
+      today: {
+        title: "Today",
+        body: "Today I connect digital strategy, content, websites, custom applications, AI and automation through my work at Promoters. When a project needs specialist design, performance, translation, photography or video production, I coordinate the right collaborators with clear roles and responsibility.",
+      },
+      facts: [
+        { label: "Education", value: "Geoinformatics & Surveying · University of Serres · 2001–2006" },
+        { label: "Greek", value: "Native" },
+        { label: "English", value: "Professional" },
+        { label: "German", value: "Conversational" },
+      ],
+      closing: "Marketing was the starting point. Curiosity, logic and the need to solve problems shaped everything that followed.",
+    },
+    thinking: {
+      eyebrow: "HOW I THINK",
+      title: "I do not start with the service. I start with the problem.",
+      intro: [
+        "Every project has different needs. Sometimes the answer is a website. Sometimes it is content, advertising, video, automation, or a combination of them.",
+        "My role is to understand what needs to be achieved first, and only then decide what the project actually needs.",
+      ],
+      principles: [
+        {
+          number: "01",
+          title: "Problem before service",
+          body: "We do not start with “let’s do social media” or “let’s build a website”. We start with what needs to change.",
+        },
+        {
+          number: "02",
+          title: "Strategy before tools",
+          body: "Next.js, WordPress, Meta, AI, Klaviyo or any other tool is a means. It is not the strategy.",
+        },
+        {
+          number: "03",
+          title: "The right people, not all the people",
+          body: "Not every project needs a large team. When a specialist is needed, the right person is selected and their role is clear.",
+        },
+        {
+          number: "04",
+          title: "AI assists. Humans decide.",
+          body: "I use AI every day for research, production and speed. I do not treat it as the single source of truth, and the final decision remains human.",
+        },
+        {
+          number: "05",
+          title: "Build, measure, improve",
+          body: "A project does not end when it goes live. We measure, learn and improve.",
+        },
+      ],
+      process: ["Understand", "Research", "Strategy", "Design", "Deliver", "Improve"],
+      statement: "I do not start with which tool we will use. I start with what needs to work better.",
+      closing: "Better Problems. Better Solutions.",
+    },
+  },
 };
