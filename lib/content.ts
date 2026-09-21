@@ -325,7 +325,7 @@ const greekProjects: ProjectCase[] = [
     categories: ["Strategy", "Website", "Web Application", "AI", "Automation", "Analytics", "Integrations", "Content"],
     cardCategories: "Strategy · Web · Digital Systems",
     cardBackground: "#ffffff",
-    logo: driveImage("1VOJeQrWH6jpigjfrlcDjPLyeiZNNy3Kn", 700),
+    logo: "/assets/logos/promoters.svg",
     role: "Strategy · UX & Architecture · Copy & Content · Full-stack Development · AI & Automation · Analytics · Project Lead",
     intro: [
       "Η Promoters χρειαζόταν αρχικά μια νέα εταιρική παρουσία που να αποτυπώνει καλύτερα τον τρόπο με τον οποίο δουλεύουμε και τις υπηρεσίες που μπορούμε να προσφέρουμε.",
@@ -403,7 +403,7 @@ const greekProjects: ProjectCase[] = [
     categories: ["Strategy", "Content", "Social Media", "Website", "UI/UX", "Email Marketing", "Automation"],
     cardCategories: "Strategy · Web · Automation",
     cardBackground: "#ffffff",
-    logo: driveImage("1_YhOHN6oMrpHl_0_CVzyqSKYtGTew4kt", 900),
+    logo: "/assets/logos/tma.png",
     role: "Strategy · Content Strategy · Copywriting · UI/UX Consulting · Funnel Architecture · Klaviyo Setup & Automation · Project Coordination",
     intro: [
       "Η T.M.A. παρέχει σε ταξιδιώτες πρόσβαση σε πραγματικούς γιατρούς, τηλεϊατρική και ιατρική υποστήριξη στο εξωτερικό, λειτουργώντας συμπληρωματικά στην ταξιδιωτική ασφάλιση.",
@@ -484,7 +484,7 @@ const greekProjects: ProjectCase[] = [
     categories: ["Website", "UX/UI", "Content Architecture", "SEO", "Analytics"],
     cardCategories: "Web · UX/UI · SEO",
     cardBackground: "#fdecec",
-    logo: driveImage("1djVrT6F4hZ3yrJkvYn9WqnbyO3k2TSfc", 700),
+    logo: "/assets/logos/es-beauty.png",
     role: "Strategy · Information Architecture · UX/UI · Copywriting · SEO Structure · Front-end Development · Integrations · Analytics",
     intro: [
       "Το ES Beauty Studio χρειαζόταν μια νέα ψηφιακή παρουσία που να παρουσιάζει με πιο ολοκληρωμένο και σύγχρονο τρόπο τις υπηρεσίες του studio.",
@@ -538,7 +538,7 @@ const greekProjects: ProjectCase[] = [
     categories: ["Brand Strategy", "Website", "UX/UI", "Content", "SEO", "CMS"],
     cardCategories: "Branding · Web · SEO",
     cardBackground: "#111827",
-    logo: driveImage("1LBW-Vap1AcvQ8fC-EeiJsq9bPjQWvBWK", 900),
+    logo: "/assets/logos/eleni-stathopoulou.png",
     role: "Research · Positioning · Copywriting · Content Architecture · Development · SEO · CMS Integration",
     intro: [
       "Η Ελένη Σταθοπούλου χρειαζόταν ένα ξεχωριστό προσωπικό brand αποκλειστικά για το bridal makeup, ανεξάρτητο από το ES Beauty Studio.",
@@ -601,7 +601,7 @@ const greekProjects: ProjectCase[] = [
     categories: ["Brand Strategy", "Positioning", "E-commerce", "UX/UI", "Content Strategy", "Consulting"],
     cardCategories: "Strategy · Branding · E-commerce",
     cardBackground: "#fff4fb",
-    logo: driveImage("11vHCcbKoNruWWyXHhnJxdGyYHCj_6ehT", 700),
+    logo: "/assets/logos/pinkberry.png",
     role: "Research · Positioning · Brand Strategy · Buyer Persona · Messaging · UX/UI Direction · E-commerce Design · Consulting",
     intro: [
       "Όταν ξεκίνησε η συνεργασία, υπήρχε ήδη ένα e-shop, αλλά χωρίς ξεκάθαρη εταιρική ταυτότητα, positioning ή σαφή στρατηγική για το ποιο κοινό προσπαθούσε να προσεγγίσει.",
@@ -670,7 +670,7 @@ const greekProjects: ProjectCase[] = [
     categories: ["Social Media", "Website", "Content", "Web Application", "Digital Systems"],
     cardCategories: "Web · Digital Systems · Content",
     cardBackground: "#10141a",
-    logo: driveImage("1cvsmfgpZhvP15ihqu_XYsaeoFs-pK7_f", 700),
+    logo: "/assets/logos/notias.png",
     role: "Strategy · Social Media Management · Content Planning · Website Design & Development · Photography Direction · Web App Development · Backend & Content Management",
     intro: [
       "Η συνεργασία με τον Νοτιά ξεκίνησε το 2019 από μηδενική ψηφιακή βάση. Η επιχείρηση είχε εταιρική ταυτότητα από εξωτερικό γραφίστα, αλλά δεν υπήρχε website ή οργανωμένη digital παρουσία.",
