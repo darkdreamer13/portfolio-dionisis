@@ -24,6 +24,7 @@ const EMAIL_HREF = "mailto:geo178@hotmail.com";
 const PHONE_HREF = "tel:+306973635835";
 const LINKEDIN_HREF = "https://www.linkedin.com/in/diliopoulos/";
 const UPWORK_HREF = "https://www.upwork.com/freelancers/~0191fc300963a39cd2?mp_source=share";
+const CV_HREF = "/cv/Dionisios_Iliopoulos_CV.pdf";
 
 export default function PortfolioPage({ locale }: { locale: Locale }) {
   const copy = siteCopy[locale];
@@ -295,7 +296,12 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
           <div className="eyebrow">{copy.about.eyebrow}</div>
           <h2>{copy.about.title}</h2>
           <p>{copy.about.body}</p>
-          <a href="#contact" className="button button-secondary">
+          <p className="about-cv-prompt">{copy.about.cvPrompt}</p>
+          <a
+            href={CV_HREF}
+            className="button button-secondary"
+            download="Dionisios_Iliopoulos_CV.pdf"
+          >
             {copy.about.button}
           </a>
         </article>
@@ -369,6 +375,8 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
             <a href={LINKEDIN_HREF} target="_blank" rel="noreferrer">LinkedIn</a>
             <span aria-hidden="true">·</span>
             <a href={UPWORK_HREF} target="_blank" rel="noreferrer">Upwork</a>
+            <span aria-hidden="true">·</span>
+            <a href={CV_HREF} download="Dionisios_Iliopoulos_CV.pdf">CV ↓</a>
           </div>
           <a className="footer-phone" href={PHONE_HREF}>+30 697 363 5835</a>
         </div>

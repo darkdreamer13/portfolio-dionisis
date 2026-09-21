@@ -140,7 +140,8 @@ export const siteCopy = {
       title: "Marketing ήταν η αρχή. Όχι το όριο.",
       body:
         "Ξεκίνησα από το marketing και το περιεχόμενο, και σταδιακά εξελίχθηκα μέσα από ιστοσελίδες, analytics, integrations, custom εφαρμογές, automation και project leadership.",
-      button: "Περισσότερα για εμένα →",
+      cvPrompt: "Θέλετε μια πιο συνοπτική εικόνα της εμπειρίας και των δεξιοτήτων μου;",
+      button: "Λήψη βιογραφικού ↓",
     },
     tools: {
       eyebrow: "TOOLS & TECHNOLOGY",
@@ -277,7 +278,8 @@ export const siteCopy = {
       title: "Marketing was the starting point. Not the limit.",
       body:
         "I started in marketing and content, then expanded through websites, analytics, integrations, custom applications, automation and project leadership.",
-      button: "More about me →",
+      cvPrompt: "Prefer a concise overview of my experience and skills?",
+      button: "Download CV ↓",
     },
     tools: {
       eyebrow: "TOOLS & TECHNOLOGY",

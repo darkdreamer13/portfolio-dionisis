@@ -2574,3 +2574,19 @@ main {
     line-height: 25px;
   }
 }
+
+
+/* CV download */
+.about-cv-prompt {
+  margin: 14px 0 10px !important;
+  max-width: 520px;
+  color: var(--color-text-secondary);
+  font-size: 13px !important;
+  line-height: 19px !important;
+}
+
+@media (max-width: 760px) {
+  .about-cv-prompt {
+    margin-top: 18px !important;
+  }
+}
