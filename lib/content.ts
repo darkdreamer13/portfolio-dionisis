@@ -537,7 +537,7 @@ const greekProjects: ProjectCase[] = [
     status: "Live",
     categories: ["Brand Strategy", "Website", "UX/UI", "Content", "SEO", "CMS"],
     cardCategories: "Branding · Web · SEO",
-    cardBackground: "#111827",
+    cardBackground: "#ffffff",
     logo: "/assets/logos/eleni-stathopoulou.png",
     role: "Research · Positioning · Copywriting · Content Architecture · Development · SEO · CMS Integration",
     intro: [
