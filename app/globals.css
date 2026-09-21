@@ -2590,3 +2590,26 @@ main {
     margin-top: 18px !important;
   }
 }
+
+
+/* Desktop hero title: preserve the two-line Figma composition after switching to Inter */
+.hero-title-desktop {
+  display: none;
+}
+
+@media (min-width: 1440px) {
+  .hero-title-default {
+    display: none;
+  }
+
+  .hero-title-desktop {
+    display: block;
+    white-space: nowrap;
+  }
+
+  .hero-copy h1 {
+    height: 104px;
+    width: 620px;
+    overflow: visible;
+  }
+}

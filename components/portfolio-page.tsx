@@ -112,7 +112,24 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
       <section className="hero">
         <div className="hero-copy">
           <div className="eyebrow">{copy.hero.eyebrow}</div>
-          <h1>{copy.hero.title}</h1>
+          <h1>
+            <span className="hero-title-default">{copy.hero.title}</span>
+            <span className="hero-title-desktop">
+              {locale === "el" ? (
+                <>
+                  Στρατηγική, περιεχόμενο
+                  <br />
+                  και τεχνολογία.
+                </>
+              ) : (
+                <>
+                  Strategy, content
+                  <br />
+                  and technology.
+                </>
+              )}
+            </span>
+          </h1>
           <p className="hero-accent">{copy.hero.accent}</p>
           <p className="hero-description">{copy.hero.description}</p>
           <div className="hero-actions">
