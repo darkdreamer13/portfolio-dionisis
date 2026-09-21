@@ -1,9 +1,21 @@
 export type Locale = "el" | "en";
 
+export type ProjectAssetKind =
+  | "website"
+  | "mobile"
+  | "dashboard"
+  | "brand"
+  | "social"
+  | "photo"
+  | "video"
+  | "booking"
+  | "app";
+
 export type ProjectAsset = {
   src: string;
   alt: string;
   label?: string;
+  kind: ProjectAssetKind;
 };
 
 export type CaseSection = {
@@ -388,10 +400,10 @@ const greekProjects: ProjectCase[] = [
     ],
     closing: "Ξεκίνησε ως website. Εξελίχθηκε μαζί με τις πραγματικές ανάγκες της επιχείρησης.",
     assets: [
-      { src: driveImage("1sbEAsTMkRd0xLesFNRZRJSOXLB1b16Da"), alt: "Promoters website homepage", label: "Public website" },
-      { src: driveImage("1t7TR_WssWX4rDcWYaY6vw6NQIy9u5Lfk"), alt: "Promoters admin dashboard", label: "Admin platform" },
-      { src: driveImage("1tL8n2TSlhPAZ_kWqRQFk4ETPPEJU9IaV"), alt: "Promoters AI content dashboard", label: "AI content system" },
-      { src: driveImage("1S7rtvMPVFXc-6yvqm31J2X3qXrHj9KFF"), alt: "Promoters Meta integration", label: "Meta integration" },
+      { src: driveImage("1sbEAsTMkRd0xLesFNRZRJSOXLB1b16Da"), alt: "Promoters website homepage", label: "Public website", kind: "website" },
+      { src: driveImage("1t7TR_WssWX4rDcWYaY6vw6NQIy9u5Lfk"), alt: "Promoters admin dashboard", label: "Admin platform", kind: "dashboard" },
+      { src: driveImage("1tL8n2TSlhPAZ_kWqRQFk4ETPPEJU9IaV"), alt: "Promoters AI content dashboard", label: "AI content system", kind: "dashboard" },
+      { src: driveImage("1S7rtvMPVFXc-6yvqm31J2X3qXrHj9KFF"), alt: "Promoters Meta integration", label: "Meta integration", kind: "dashboard" },
     ],
   },
   {
@@ -470,9 +482,9 @@ const greekProjects: ProjectCase[] = [
     ],
     closing: "Ξεκίνησε ως content project. Εξελίχθηκε σε redesign ολόκληρης της διαδρομής του ταξιδιώτη.",
     assets: [
-      { src: driveImage("1ForPyl-ulu7fKgRP5nJGi_G2Br5k1HUV"), alt: "TMA static content", label: "Static content" },
-      { src: driveImage("1C0fYDcRrOkdCAv34LadV4bV_h-r-uAer"), alt: "TMA social content", label: "Social content" },
-      { src: driveImage("1U-ZkkTCCY55x0733pYQlBWg01NQA9rmt"), alt: "TMA video frame", label: "Video content" },
+      { src: driveImage("1ForPyl-ulu7fKgRP5nJGi_G2Br5k1HUV"), alt: "TMA static content", label: "Static content", kind: "social" },
+      { src: driveImage("1C0fYDcRrOkdCAv34LadV4bV_h-r-uAer"), alt: "TMA social content", label: "Social content", kind: "social" },
+      { src: driveImage("1U-ZkkTCCY55x0733pYQlBWg01NQA9rmt"), alt: "TMA video frame", label: "Video content", kind: "video" },
     ],
   },
   {
@@ -523,10 +535,10 @@ const greekProjects: ProjectCase[] = [
     ],
     closing: "Ένα website που οργανώνει τις υπηρεσίες, υποστηρίζει την αναζήτηση και οδηγεί φυσικά στην κράτηση.",
     assets: [
-      { src: driveImage("117OYEBPnEYIZrfPFGu4SLckgXsJGFLVc"), alt: "ES Beauty Studio desktop homepage", label: "Homepage · Desktop" },
-      { src: driveImage("176wRVcKCfEn8rcmNU8AJAj5C98CEIFQa"), alt: "ES Beauty Studio mobile homepage", label: "Homepage · Mobile" },
-      { src: driveImage("1J7G9Jcs3rPMRkKb82Rkm-Jm3CMQqxNqd"), alt: "ES Beauty Studio service page", label: "Service architecture" },
-      { src: driveImage("1rBi4jXlI29g49ziKItCamj8xGBbhJ2vk"), alt: "Fresha booking integration", label: "Fresha booking" },
+      { src: driveImage("117OYEBPnEYIZrfPFGu4SLckgXsJGFLVc"), alt: "ES Beauty Studio desktop homepage", label: "Homepage · Desktop", kind: "website" },
+      { src: driveImage("176wRVcKCfEn8rcmNU8AJAj5C98CEIFQa"), alt: "ES Beauty Studio mobile homepage", label: "Homepage · Mobile", kind: "mobile" },
+      { src: driveImage("1J7G9Jcs3rPMRkKb82Rkm-Jm3CMQqxNqd"), alt: "ES Beauty Studio service page", label: "Service architecture", kind: "website" },
+      { src: driveImage("1rBi4jXlI29g49ziKItCamj8xGBbhJ2vk"), alt: "Fresha booking integration", label: "Fresha booking", kind: "booking" },
     ],
   },
   {
@@ -585,11 +597,11 @@ const greekProjects: ProjectCase[] = [
     ],
     closing: "Από την έρευνα και το positioning μέχρι το design και τον κώδικα, ένα προσωπικό bridal brand χτίστηκε από το μηδέν.",
     assets: [
-      { src: driveImage("1llnkEbkgbOUmYoShBwxB_lO7r6mU-D61"), alt: "Eleni Stathopoulou brand guide", label: "Brand identity" },
-      { src: driveImage("13kMIwFEk2SWDeXSjah2KYrMN4bZyhbnS"), alt: "Eleni Stathopoulou website", label: "Final website" },
-      { src: driveImage("1w5GcEJKcTPJPNaEuTcIIOT7FMdKzt06Y"), alt: "Eleni Stathopoulou mobile website", label: "Responsive implementation" },
-      { src: driveImage("18_MVtcxC35zEHyBaOqlFawdZijVFeQFW"), alt: "Bridal makeup photography", label: "Photography direction" },
-      { src: driveImage("1nUsrG_SDT_LwJnhxHinPMAXIt4IMEms0"), alt: "Bridal makeup photography", label: "Selected visual" },
+      { src: driveImage("1llnkEbkgbOUmYoShBwxB_lO7r6mU-D61"), alt: "Eleni Stathopoulou brand guide", label: "Brand identity", kind: "brand" },
+      { src: driveImage("13kMIwFEk2SWDeXSjah2KYrMN4bZyhbnS"), alt: "Eleni Stathopoulou website", label: "Final website", kind: "website" },
+      { src: driveImage("1w5GcEJKcTPJPNaEuTcIIOT7FMdKzt06Y"), alt: "Eleni Stathopoulou mobile website", label: "Responsive implementation", kind: "mobile" },
+      { src: driveImage("18_MVtcxC35zEHyBaOqlFawdZijVFeQFW"), alt: "Bridal makeup photography", label: "Photography direction", kind: "photo" },
+      { src: driveImage("1nUsrG_SDT_LwJnhxHinPMAXIt4IMEms0"), alt: "Bridal makeup photography", label: "Selected visual", kind: "photo" },
     ],
   },
   {
@@ -656,9 +668,9 @@ const greekProjects: ProjectCase[] = [
     ],
     closing: "Πριν ζητήσεις από ένα e-shop να πουλήσει, πρέπει πρώτα να ξέρει ποιο brand είναι.",
     assets: [
-      { src: driveImage("1VTSFURQUIK1n02VL6Rx2KFgnT-PisAuv"), alt: "Pinkberry brand guide", label: "Brand identity" },
-      { src: driveImage("1JjWf8V2FZNL3QdnqQyrlF7JNfXsUX_6X"), alt: "Pinkberry mobile e-commerce design", label: "E-commerce design" },
-      { src: driveImage("1CXBU6LZ8tbk4UqTgTIN2hQDdQ2e0e4o0"), alt: "Pinkberry live e-shop", label: "Live e-shop" },
+      { src: driveImage("1VTSFURQUIK1n02VL6Rx2KFgnT-PisAuv"), alt: "Pinkberry brand guide", label: "Brand identity", kind: "brand" },
+      { src: driveImage("1JjWf8V2FZNL3QdnqQyrlF7JNfXsUX_6X"), alt: "Pinkberry mobile e-commerce design", label: "E-commerce design", kind: "mobile" },
+      { src: driveImage("1CXBU6LZ8tbk4UqTgTIN2hQDdQ2e0e4o0"), alt: "Pinkberry live e-shop", label: "Live e-shop", kind: "website" },
     ],
   },
   {
@@ -718,11 +730,11 @@ const greekProjects: ProjectCase[] = [
     ],
     closing: "Έξι χρόνια συνεργασίας, με την ψηφιακή υποδομή να εξελίσσεται κάθε φορά που εμφανιζόταν μια πραγματική νέα ανάγκη.",
     assets: [
-      { src: driveImage("1UIZpyCw-5p-sebGEV9SCzh7_7e-eqssZ"), alt: "Notias restaurant website", label: "Public website" },
-      { src: driveImage("1UtBnMOLfxlWe95QcXwJZk4HNvUa5U2sw"), alt: "Notias menu application", label: "Menu experience" },
-      { src: driveImage("1BO1hAX7mNYYz6YCVcvcN_6c0rxBa2wKB"), alt: "Notias menu administration", label: "Management backend" },
-      { src: driveImage("15jC51gG13Lz5g9qmBuwH7WIDLEB_rKR5"), alt: "Notias professional food photography", label: "Content production" },
-      { src: driveImage("1hh3dR_D1IdahUk-k3Zrl5ShA03LAwlpR"), alt: "Notias mobile website", label: "Mobile experience" },
+      { src: driveImage("1UIZpyCw-5p-sebGEV9SCzh7_7e-eqssZ"), alt: "Notias restaurant website", label: "Public website", kind: "website" },
+      { src: driveImage("1UtBnMOLfxlWe95QcXwJZk4HNvUa5U2sw"), alt: "Notias menu application", label: "Menu experience", kind: "app" },
+      { src: driveImage("1BO1hAX7mNYYz6YCVcvcN_6c0rxBa2wKB"), alt: "Notias menu administration", label: "Management backend", kind: "dashboard" },
+      { src: driveImage("15jC51gG13Lz5g9qmBuwH7WIDLEB_rKR5"), alt: "Notias professional food photography", label: "Content production", kind: "photo" },
+      { src: driveImage("1hh3dR_D1IdahUk-k3Zrl5ShA03LAwlpR"), alt: "Notias mobile website", label: "Mobile experience", kind: "mobile" },
     ],
   },
 ];
