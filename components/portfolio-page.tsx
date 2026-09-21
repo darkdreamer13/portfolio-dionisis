@@ -3,8 +3,9 @@
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import ProjectModal from "@/components/project-modal";
+import MoreWorkModal from "@/components/more-work-modal";
 import { MobileCapabilities, MobileProcess, MobileSelectedWork } from "@/components/mobile-portfolio-sections";
-import { projectsByLocale, siteCopy, type Locale } from "@/lib/content";
+import { moreWorkCasesByLocale, projectsByLocale, siteCopy, type Locale } from "@/lib/content";
 
 const productionImages = [
   "/assets/production-videographer.png",
@@ -27,11 +28,18 @@ const UPWORK_HREF = "https://www.upwork.com/freelancers/~0191fc300963a39cd2?mp_s
 export default function PortfolioPage({ locale }: { locale: Locale }) {
   const copy = siteCopy[locale];
   const projects = projectsByLocale[locale];
+  const moreWorkCases = moreWorkCasesByLocale[locale];
   const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [selectedMoreWorkId, setSelectedMoreWorkId] = useState<string | null>(null);
 
   const selectedProject = useMemo(
     () => projects.find((project) => project.id === selectedId) ?? null,
     [projects, selectedId],
+  );
+
+  const selectedMoreWork = useMemo(
+    () => moreWorkCases.find((project) => project.id === selectedMoreWorkId) ?? null,
+    [moreWorkCases, selectedMoreWorkId],
   );
 
   const closeProject = useCallback(() => {
@@ -42,17 +50,41 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
   }, []);
 
   const openProject = useCallback((id: string) => {
+    setSelectedMoreWorkId(null);
     setSelectedId(id);
     window.history.replaceState(null, "", "#case-" + id);
   }, []);
 
+  const closeMoreWork = useCallback(() => {
+    setSelectedMoreWorkId(null);
+    if (window.location.hash.startsWith("#more-")) {
+      window.history.replaceState(null, "", window.location.pathname + window.location.search);
+    }
+  }, []);
+
+  const openMoreWork = useCallback((id: string) => {
+    setSelectedId(null);
+    setSelectedMoreWorkId(id);
+    window.history.replaceState(null, "", "#more-" + id);
+  }, []);
+
   useEffect(() => {
     document.documentElement.lang = locale;
-    const hashId = window.location.hash.replace("#case-", "");
-    if (hashId && projects.some((project) => project.id === hashId)) {
-      setSelectedId(hashId);
+
+    if (window.location.hash.startsWith("#case-")) {
+      const hashId = window.location.hash.replace("#case-", "");
+      if (hashId && projects.some((project) => project.id === hashId)) {
+        setSelectedId(hashId);
+      }
     }
-  }, [locale, projects]);
+
+    if (window.location.hash.startsWith("#more-")) {
+      const hashId = window.location.hash.replace("#more-", "");
+      if (hashId && moreWorkCases.some((project) => project.id === hashId)) {
+        setSelectedMoreWorkId(hashId);
+      }
+    }
+  }, [locale, projects, moreWorkCases]);
 
   return (
     <main>
@@ -284,17 +316,27 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
           <h2>{copy.moreWork.title}</h2>
         </div>
         <div className="more-work-grid">
-          {copy.moreWork.items.map(([name, descriptor]) => (
-            <article key={name}>
-              <div className="more-work-logo" aria-hidden="true">
-                <img src={MORE_WORK_LOGOS[name]} alt="" />
-              </div>
-              <div className="more-work-copy">
-                <strong>{name}</strong>
-                <span>{descriptor}</span>
-              </div>
-            </article>
-          ))}
+          {copy.moreWork.items.map(([name, descriptor], index) => {
+            const project = moreWorkCases[index];
+            return (
+              <button
+                key={name}
+                type="button"
+                className="more-work-item"
+                onClick={() => openMoreWork(project.id)}
+                aria-label={name + " — " + descriptor}
+              >
+                <div className="more-work-logo" aria-hidden="true">
+                  <img src={MORE_WORK_LOGOS[name]} alt="" />
+                </div>
+                <div className="more-work-copy">
+                  <strong>{name}</strong>
+                  <span>{descriptor}</span>
+                </div>
+                <span className="more-work-arrow" aria-hidden="true">↗</span>
+              </button>
+            );
+          })}
         </div>
       </section>
 
@@ -334,6 +376,10 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
 
       {selectedProject ? (
         <ProjectModal project={selectedProject} labels={copy.modal} onClose={closeProject} />
+      ) : null}
+
+      {selectedMoreWork ? (
+        <MoreWorkModal project={selectedMoreWork} locale={locale} onClose={closeMoreWork} />
       ) : null}
     </main>
   );

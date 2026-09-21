@@ -878,3 +878,134 @@ export const projectsByLocale: Record<Locale, ProjectCase[]> = {
   el: greekProjects,
   en: englishProjects,
 };
+
+
+export type MoreWorkMetric = {
+  value: string;
+  label: string;
+};
+
+export type MoreWorkCase = {
+  id: string;
+  title: string;
+  period?: string;
+  tags: string[];
+  logo: string;
+  paragraphs: string[];
+  role: string;
+  metrics?: MoreWorkMetric[];
+  closing: string;
+  liveUrl?: string;
+};
+
+const greekMoreWorkCases: MoreWorkCase[] = [
+  {
+    id: "pralina-pastry",
+    title: "Pralina Pastry",
+    period: "01/2024–05/2024",
+    tags: ["Social Media", "Content", "Community Management"],
+    logo: "/assets/more-work/pralina.jpeg",
+    paragraphs: [
+      "Ανέλαβα εξ ολοκλήρου τη διαχείριση της ψηφιακής παρουσίας της Pralina Pastry σε Instagram, Facebook και Google, από τη στρατηγική και το content planning μέχρι τη δημιουργία περιεχομένου, τη δημοσίευση και τη διαχείριση της κοινότητας.",
+      "Η έμφαση δόθηκε στη συστηματική παραγωγή περιεχομένου και ιδιαίτερα στο short-form video, με στόχο μεγαλύτερη οργανική απήχηση και ανάπτυξη των social accounts.",
+    ],
+    role: "Strategy · Content Creation · Social Media Management · Community Management",
+    metrics: [
+      { value: "+270%", label: "Instagram followers" },
+      { value: "+37.5%", label: "Facebook followers" },
+      { value: "+2000%", label: "Facebook reach" },
+      { value: "350K", label: "Facebook video views" },
+      { value: "250K", label: "TikTok video views" },
+      { value: "130K", label: "Instagram video views" },
+    ],
+    closing: "Συνεπές περιεχόμενο, σωστό format και οργανική ανάπτυξη χωρίς να βασίζεται όλο το αποτέλεσμα σε paid media.",
+  },
+  {
+    id: "crazybloom",
+    title: "CrazyBloom",
+    period: "Seasonal collaboration · Website 2024",
+    tags: ["Seasonal Social", "Content", "Website"],
+    logo: "/assets/more-work/crazybloom.jpeg",
+    paragraphs: [
+      "Η συνεργασία με το CrazyBloom είχε έντονα εποχικό χαρακτήρα. Κάθε καλοκαίρι η ψηφιακή παρουσία της επιχείρησης έπρεπε να ενεργοποιείται γρήγορα και να υποστηρίζει τη σύντομη αλλά σημαντική περίοδο λειτουργίας της.",
+      "Ανέλαβα τη διαχείριση Facebook, Instagram και Google Business, τη δημιουργία και δημοσίευση περιεχομένου και την επικοινωνία με το κοινό. Το 2024 σχεδίασα και κατασκεύασα επίσης το μονοσέλιδο website της επιχείρησης σε React / Next.js, ώστε να υπάρχει ένα σταθερό digital σημείο αναφοράς πέρα από τα social media.",
+    ],
+    role: "Social Media Management · Content · Website Design & Development",
+    closing: "Μια εποχική επιχείρηση χρειάζεται digital παρουσία που μπορεί να ενεργοποιείται γρήγορα κάθε φορά που ξεκινά η σεζόν.",
+    liveUrl: "https://crazybloom.gr",
+  },
+  {
+    id: "ipsipetis-travel",
+    title: "Ipsipetis Travel",
+    period: "July 2024",
+    tags: ["Strategy", "Social Media", "Consulting"],
+    logo: "/assets/more-work/ipsipetis.png",
+    paragraphs: [
+      "Η συνεργασία με το Ipsipetis Travel ήταν περισσότερο στρατηγικό και συμβουλευτικό project παρά απλή διαχείριση social media.",
+      "Ξεκίνησε με ανάλυση ανταγωνισμού και κοινού και εξελίχθηκε σε social media strategy, content direction, προτάσεις για posts και reels, profile optimization και ιδέες για marketing campaigns. Παράλληλα αναλύθηκαν κοινά και δημογραφικά χαρακτηριστικά, δημιουργήθηκε κατεύθυνση για τη διατήρηση engagement εκτός σεζόν και έγιναν συγκεκριμένες προτάσεις για τη βελτίωση της εμπειρίας χρήστη στο υπάρχον website.",
+    ],
+    role: "Research · Strategy · Audience Analysis · Content Direction · UX Consulting",
+    closing: "Όχι απλώς τι θα δημοσιεύσουμε, αλλά σε ποιον μιλάμε, γιατί και τι πρέπει να συμβαίνει όταν τελειώνει η σεζόν.",
+  },
+  {
+    id: "phaos",
+    title: "PHAOS",
+    tags: ["Digital Consulting", "Information Architecture", "Email Marketing", "Content", "Advertising"],
+    logo: "/assets/more-work/phaos.jpeg",
+    paragraphs: [
+      "Στο PHAOS ο ρόλος μου ήταν κυρίως στρατηγικός και συμβουλευτικός γύρω από τη νέα ψηφιακή παρουσία και την επικοινωνία του οργανισμού.",
+      "Συμμετείχα στον σχεδιασμό του νέου sitemap και της πληροφοριακής αρχιτεκτονικής του website, ενώ η τεχνική κατασκευή του site πραγματοποιήθηκε από διαφορετικό συνεργάτη. Παράλληλα ανέλαβα email marketing μέσω Mailchimp, παραγωγή περιεχομένου κατά τη διάρκεια live events για Stories και Reels, καθώς και δημιουργία content και concepts για advertising campaigns.",
+    ],
+    role: "Digital Consulting · Information Architecture · Email Marketing · Live Content · Advertising Content",
+    closing: "Στρατηγική συμμετοχή εκεί όπου διαφορετικά digital touchpoints έπρεπε να αποκτήσουν κοινή κατεύθυνση.",
+  },
+];
+
+const englishMoreWorkCases: MoreWorkCase[] = [
+  {
+    ...greekMoreWorkCases[0],
+    tags: ["Social Media", "Content", "Community Management"],
+    paragraphs: [
+      "I managed Pralina Pastry’s digital presence across Instagram, Facebook and Google, handling strategy, content planning, content creation, publishing and community management.",
+      "The focus was on consistent content production and short-form video to increase organic reach and grow the social channels.",
+    ],
+    role: "Strategy · Content Creation · Social Media Management · Community Management",
+    closing: "Consistent content, the right format and organic growth without relying entirely on paid media.",
+  },
+  {
+    ...greekMoreWorkCases[1],
+    period: "Seasonal collaboration · Website 2024",
+    tags: ["Seasonal Social", "Content", "Website"],
+    paragraphs: [
+      "CrazyBloom is a highly seasonal business, so its digital presence needed to become active quickly each summer and support a short but commercially important operating period.",
+      "I managed Facebook, Instagram and Google Business, created and published content and handled audience engagement. In 2024, I also designed and developed the company’s single-page website in React / Next.js, giving the business a permanent digital destination beyond social media.",
+    ],
+    role: "Social Media Management · Content · Website Design & Development",
+    closing: "A seasonal business needs a digital presence that can activate quickly whenever the season begins.",
+  },
+  {
+    ...greekMoreWorkCases[2],
+    tags: ["Strategy", "Social Media", "Consulting"],
+    paragraphs: [
+      "The Ipsipetis Travel collaboration was primarily a strategic and consulting engagement rather than a simple social media management project.",
+      "It started with competitor and audience analysis and evolved into a tailored social media strategy, content direction, posts and reels, profile optimisation and campaign recommendations. The work also included audience targeting, demographic insights, an off-season engagement plan and practical UX recommendations for the existing website.",
+    ],
+    role: "Research · Strategy · Audience Analysis · Content Direction · UX Consulting",
+    closing: "Not just what to publish, but who we are speaking to, why, and what should happen when the season ends.",
+  },
+  {
+    ...greekMoreWorkCases[3],
+    tags: ["Digital Consulting", "Information Architecture", "Email Marketing", "Content", "Advertising"],
+    paragraphs: [
+      "My role with PHAOS was primarily strategic and consultative, supporting the organisation’s new digital presence and communication.",
+      "I contributed to the new website’s sitemap and information architecture, while the technical development itself was handled by another collaborator. I also worked on Mailchimp email marketing, live-event content production for Stories and Reels, and content and creative concepts for advertising campaigns.",
+    ],
+    role: "Digital Consulting · Information Architecture · Email Marketing · Live Content · Advertising Content",
+    closing: "Strategic involvement where different digital touchpoints needed a shared direction.",
+  },
+];
+
+export const moreWorkCasesByLocale: Record<Locale, MoreWorkCase[]> = {
+  el: greekMoreWorkCases,
+  en: englishMoreWorkCases,
+};

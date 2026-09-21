@@ -2330,3 +2330,247 @@ main {
     color: var(--color-accent);
   }
 }
+
+
+/* Compact More Work case-study modals */
+.more-work-grid .more-work-item {
+  display: flex;
+  min-height: 79px;
+  flex-direction: row;
+  align-items: center;
+  gap: 14px;
+  padding: 15px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background: white;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.more-work-grid .more-work-item:hover,
+.more-work-grid .more-work-item:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(20, 93, 255, 0.45);
+  box-shadow: 0 10px 24px rgba(17, 24, 39, 0.07);
+  outline: none;
+}
+
+.more-work-arrow {
+  margin-left: auto;
+  color: var(--color-accent);
+  font-size: 17px;
+}
+
+.more-work-modal {
+  width: min(720px, 100%);
+  max-height: calc(100dvh - 48px);
+  overflow: auto;
+  border: 1px solid rgba(228, 231, 236, 0.92);
+  border-radius: 18px;
+  background: var(--color-bg-base);
+  box-shadow: 0 32px 90px rgba(0, 0, 0, 0.3);
+  animation: modalRise 220ms ease-out;
+}
+
+.more-work-modal-header {
+  position: sticky;
+  z-index: 3;
+  top: 0;
+  display: flex;
+  min-height: 72px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px 10px 20px;
+  border-bottom: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+}
+
+.more-work-modal-logo {
+  display: flex;
+  width: 52px;
+  height: 52px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background: white;
+}
+
+.more-work-modal-logo img {
+  width: 84%;
+  height: 84%;
+  object-fit: contain;
+}
+
+.more-work-modal-body {
+  padding: 34px;
+}
+
+.more-work-period {
+  color: var(--color-accent);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 11px;
+  line-height: 16px;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+}
+
+.more-work-modal-body h2 {
+  margin: 10px 0 0;
+  font-size: 42px;
+  line-height: 46px;
+  letter-spacing: -1px;
+}
+
+.more-work-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 18px;
+}
+
+.more-work-tags span {
+  padding: 6px 9px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: white;
+  color: var(--color-text-secondary);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 10px;
+  line-height: 14px;
+}
+
+.more-work-text {
+  margin-top: 26px;
+  padding-top: 24px;
+  border-top: 1px solid var(--color-border);
+}
+
+.more-work-text p {
+  margin: 0 0 13px;
+  color: var(--color-text-secondary);
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.more-work-role {
+  margin-top: 24px;
+  padding: 18px;
+  border: 1px solid var(--color-border);
+  border-radius: 11px;
+  background: white;
+}
+
+.more-work-role > span {
+  color: var(--color-accent);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.more-work-role p {
+  margin: 7px 0 0;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.more-work-metrics {
+  margin-top: 24px;
+}
+
+.more-work-metric-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 9px;
+  margin-top: 12px;
+}
+
+.more-work-metric-grid article {
+  min-height: 92px;
+  padding: 13px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background: white;
+}
+
+.more-work-metric-grid strong {
+  display: block;
+  color: var(--color-accent);
+  font-size: 23px;
+  line-height: 28px;
+}
+
+.more-work-metric-grid span {
+  display: block;
+  margin-top: 4px;
+  color: var(--color-text-secondary);
+  font-size: 12px;
+  line-height: 17px;
+}
+
+.more-work-modal blockquote {
+  margin: 26px 0 0;
+  padding: 20px 22px;
+  border-left: 3px solid var(--color-accent);
+  background: white;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+}
+
+.more-work-live-link {
+  width: 100%;
+  margin-top: 18px;
+}
+
+@media (max-width: 760px) {
+  .more-work-grid .more-work-item {
+    min-height: 74px;
+    justify-content: flex-start;
+  }
+
+  .more-work-backdrop {
+    align-items: stretch;
+    padding: 0;
+  }
+
+  .more-work-modal {
+    width: 100%;
+    height: 100dvh;
+    max-height: 100dvh;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .more-work-modal-body {
+    padding: 26px 20px 38px;
+  }
+
+  .more-work-modal-body h2 {
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  .more-work-text p {
+    font-size: 15px;
+    line-height: 24px;
+  }
+
+  .more-work-metric-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .more-work-modal blockquote {
+    font-size: 18px;
+    line-height: 25px;
+  }
+}
