@@ -48,6 +48,7 @@ export type ProjectCase = {
   tools: string[];
   result: string[];
   closing: string;
+  liveUrl: string;
   assets: ProjectAsset[];
 };
 
@@ -188,6 +189,8 @@ export const siteCopy = {
       tools: "Technology & Tools",
       result: "Το αποτέλεσμα",
       gallery: "Visual evidence",
+      visitWebsite: "Δείτε το live website ↗",
+      visitProject: "Επισκεφθείτε το project ↗",
     },
   },
   en: {
@@ -323,6 +326,8 @@ export const siteCopy = {
       tools: "Technology & Tools",
       result: "The outcome",
       gallery: "Visual evidence",
+      visitWebsite: "Visit live website ↗",
+      visitProject: "Visit project ↗",
     },
   },
 } as const;
@@ -339,6 +344,7 @@ const greekProjects: ProjectCase[] = [
     cardBackground: "#ffffff",
     logo: "/assets/logos/promoters.svg",
     role: "Strategy · UX & Architecture · Copy & Content · Full-stack Development · AI & Automation · Analytics · Project Lead",
+    liveUrl: "https://promoters.gr",
     intro: [
       "Η Promoters χρειαζόταν αρχικά μια νέα εταιρική παρουσία που να αποτυπώνει καλύτερα τον τρόπο με τον οποίο δουλεύουμε και τις υπηρεσίες που μπορούμε να προσφέρουμε.",
       "Το project ξεκίνησε το 2025 ως ένα σύγχρονο website σε Next.js. Στην πορεία, οι ανάγκες της επιχείρησης ξεπέρασαν τα όρια ενός απλού εταιρικού site και το website απέκτησε backend, εξελισσόμενο σε ενιαία πλατφόρμα για marketing, content, analytics και operations.",
@@ -417,6 +423,7 @@ const greekProjects: ProjectCase[] = [
     cardBackground: "#ffffff",
     logo: "/assets/logos/tma.png",
     role: "Strategy · Content Strategy · Copywriting · UI/UX Consulting · Funnel Architecture · Klaviyo Setup & Automation · Project Coordination",
+    liveUrl: "https://travelmedicalassist.com",
     intro: [
       "Η T.M.A. παρέχει σε ταξιδιώτες πρόσβαση σε πραγματικούς γιατρούς, τηλεϊατρική και ιατρική υποστήριξη στο εξωτερικό, λειτουργώντας συμπληρωματικά στην ταξιδιωτική ασφάλιση.",
       "Η συνεργασία ξεκίνησε με content για social media και ads. Γρήγορα έγινε σαφές ότι το content ήταν μόνο ένα μέρος του προβλήματος: το website, ιδιαίτερα στο mobile, δεν υποστήριζε αρκετά καθαρά τη διαδρομή από το πρώτο touchpoint μέχρι το επόμενο βήμα.",
@@ -498,6 +505,7 @@ const greekProjects: ProjectCase[] = [
     cardBackground: "#fdecec",
     logo: "/assets/logos/es-beauty.png",
     role: "Strategy · Information Architecture · UX/UI · Copywriting · SEO Structure · Front-end Development · Integrations · Analytics",
+    liveUrl: "https://esbeautystudio.gr",
     intro: [
       "Το ES Beauty Studio χρειαζόταν μια νέα ψηφιακή παρουσία που να παρουσιάζει με πιο ολοκληρωμένο και σύγχρονο τρόπο τις υπηρεσίες του studio.",
       "Το αποτέλεσμα ήταν ένα ολοκληρωμένο multipage website σε React / Next.js, σχεδιασμένο και υλοποιημένο εξ ολοκλήρου από εμένα.",
@@ -552,6 +560,7 @@ const greekProjects: ProjectCase[] = [
     cardBackground: "#ffffff",
     logo: "/assets/logos/eleni-stathopoulou.png",
     role: "Research · Positioning · Copywriting · Content Architecture · Development · SEO · CMS Integration",
+    liveUrl: "https://elenistathopoulou.com",
     intro: [
       "Η Ελένη Σταθοπούλου χρειαζόταν ένα ξεχωριστό προσωπικό brand αποκλειστικά για το bridal makeup, ανεξάρτητο από το ES Beauty Studio.",
       "Το project ξεκίνησε από το μηδέν και συνέδεσε έρευνα αγοράς, positioning, visual identity, Figma design, React / Next.js development, SEO και content infrastructure.",
@@ -615,6 +624,7 @@ const greekProjects: ProjectCase[] = [
     cardBackground: "#fff4fb",
     logo: "/assets/logos/pinkberry.png",
     role: "Research · Positioning · Brand Strategy · Buyer Persona · Messaging · UX/UI Direction · E-commerce Design · Consulting",
+    liveUrl: "https://pinkberry.gr",
     intro: [
       "Όταν ξεκίνησε η συνεργασία, υπήρχε ήδη ένα e-shop, αλλά χωρίς ξεκάθαρη εταιρική ταυτότητα, positioning ή σαφή στρατηγική για το ποιο κοινό προσπαθούσε να προσεγγίσει.",
       "Η συνεργασία ξεκίνησε μέσα από συμβουλευτικές συνεδρίες με στόχο να χτιστεί πρώτα η στρατηγική βάση του brand πριν επενδυθεί χρόνος και χρήμα στην προώθηση.",
@@ -684,6 +694,7 @@ const greekProjects: ProjectCase[] = [
     cardBackground: "#10141a",
     logo: "/assets/logos/notias.png",
     role: "Strategy · Social Media Management · Content Planning · Website Design & Development · Photography Direction · Web App Development · Backend & Content Management",
+    liveUrl: "https://notiaskalamata.gr",
     intro: [
       "Η συνεργασία με τον Νοτιά ξεκίνησε το 2019 από μηδενική ψηφιακή βάση. Η επιχείρηση είχε εταιρική ταυτότητα από εξωτερικό γραφίστα, αλλά δεν υπήρχε website ή οργανωμένη digital παρουσία.",
       "Μέσα σε έξι χρόνια οι ανάγκες εξελίχθηκαν από social media και website σε custom εφαρμογή για τη δυναμική διαχείριση του menu.",

@@ -11,6 +11,8 @@ type ModalLabels = {
   tools: string;
   result: string;
   gallery: string;
+  visitWebsite: string;
+  visitProject: string;
 };
 
 const FEATURED_COUNTS: Record<string, number> = {
@@ -157,6 +159,14 @@ export default function ProjectModal({
                 <span>{labels.role}</span>
                 <p>{project.role}</p>
               </div>
+              <a
+                className="case-live-link case-live-link-hero"
+                href={project.liveUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {labels.visitWebsite}
+              </a>
             </div>
           </section>
 
@@ -250,6 +260,16 @@ export default function ProjectModal({
           ) : null}
 
           <blockquote className="case-closing">{project.closing}</blockquote>
+          <div className="case-live-footer">
+            <a
+              className="case-live-link case-live-link-footer"
+              href={project.liveUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {labels.visitProject}
+            </a>
+          </div>
         </div>
       </article>
 

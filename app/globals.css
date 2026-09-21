@@ -2264,3 +2264,69 @@ main {
     flex: 1;
   }
 }
+
+
+/* Case-study live project links */
+.case-live-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: 600;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    background 160ms ease,
+    color 160ms ease;
+}
+
+.case-live-link:hover {
+  transform: translateY(-1px);
+}
+
+.case-live-link-hero {
+  margin-top: 18px;
+  padding: 10px 15px;
+  border: 1px solid var(--color-accent);
+  background: transparent;
+  color: var(--color-accent);
+}
+
+.case-live-link-hero:hover {
+  background: var(--color-accent);
+  color: white;
+  box-shadow: 0 8px 22px rgba(20, 93, 255, 0.18);
+}
+
+.case-live-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 18px;
+}
+
+.case-live-link-footer {
+  padding: 8px 0;
+  color: var(--color-accent);
+}
+
+@media (max-width: 760px) {
+  .case-live-link-hero {
+    width: 100%;
+    margin-top: 18px;
+  }
+
+  .case-live-footer {
+    justify-content: stretch;
+  }
+
+  .case-live-link-footer {
+    width: 100%;
+    min-height: 46px;
+    padding: 10px 14px;
+    border: 1px solid var(--color-accent);
+    background: white;
+    color: var(--color-accent);
+  }
+}
