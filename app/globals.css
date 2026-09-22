@@ -3940,3 +3940,297 @@ button:focus-visible,
     height: 17px;
   }
 }
+
+
+/* Project Leadership & Operations */
+.project-leadership {
+  background: #f7f6f2;
+  scroll-margin-top: 82px;
+}
+
+.leadership-shell {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.85fr) minmax(0, 1.65fr);
+  gap: 34px;
+  align-items: start;
+}
+
+.leadership-intro {
+  padding: 6px 8px 0 0;
+}
+
+.leadership-intro h2,
+.operations-heading h2 {
+  margin: 12px 0 0;
+  font-size: 34px;
+  line-height: 39px;
+  letter-spacing: -0.7px;
+}
+
+.leadership-intro p,
+.operations-heading > p {
+  margin: 14px 0 0;
+  color: var(--color-text-secondary);
+  font-size: 16px;
+  line-height: 25px;
+}
+
+.leadership-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.leadership-card {
+  min-height: 190px;
+  padding: 18px;
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  background: white;
+}
+
+.leadership-card > span {
+  display: inline-flex;
+  width: 34px;
+  height: 34px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  background: #eef3ff;
+  color: var(--color-accent);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 0.6px;
+}
+
+.leadership-card h3 {
+  margin: 15px 0 0;
+  font-size: 18px;
+  line-height: 23px;
+}
+
+.leadership-card p {
+  margin: 9px 0 0;
+  color: var(--color-text-secondary);
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.leadership-flow,
+.operations-flow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 20px;
+  padding: 13px 16px;
+  overflow-x: auto;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background: white;
+  scrollbar-width: none;
+}
+
+.leadership-flow::-webkit-scrollbar,
+.operations-flow::-webkit-scrollbar {
+  display: none;
+}
+
+.leadership-flow span,
+.operations-flow span {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-text-secondary);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 0.55px;
+  text-transform: uppercase;
+}
+
+.leadership-flow b,
+.operations-flow b {
+  color: var(--color-accent);
+  font-family: var(--font-body), "Source Sans 3", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.project-operations {
+  background: white;
+}
+
+.operations-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
+  gap: 48px;
+  align-items: end;
+}
+
+.operations-heading > p {
+  max-width: 680px;
+  justify-self: end;
+  margin-bottom: 2px;
+}
+
+.operations-label {
+  margin-top: 28px;
+  color: var(--color-accent);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.9px;
+}
+
+.operations-system-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.operations-system-card {
+  min-height: 178px;
+  padding: 18px;
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  background: #f9fafb;
+}
+
+.operations-system-card > span {
+  color: var(--color-accent);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.7px;
+}
+
+.operations-system-card h3 {
+  margin: 13px 0 0;
+  font-size: 17px;
+  line-height: 22px;
+}
+
+.operations-system-card p {
+  margin: 9px 0 0;
+  color: var(--color-text-secondary);
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.operations-closing {
+  max-width: 930px;
+  margin: 20px 0 0;
+  padding: 0 0 0 18px;
+  border-left: 3px solid var(--color-accent);
+  color: var(--color-text-primary);
+  font-family: var(--font-heading), Manrope, Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 30px;
+}
+
+@media (max-width: 1180px) {
+  .leadership-shell {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .leadership-intro {
+    max-width: 760px;
+  }
+
+  .operations-system-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .project-leadership,
+  .project-operations {
+    padding-top: 44px;
+    padding-bottom: 44px;
+  }
+
+  .leadership-intro h2,
+  .operations-heading h2 {
+    font-size: 29px;
+    line-height: 34px;
+    letter-spacing: -0.45px;
+  }
+
+  .leadership-intro p,
+  .operations-heading > p {
+    font-size: 15px;
+    line-height: 23px;
+  }
+
+  .leadership-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .leadership-card {
+    min-height: 205px;
+    padding: 14px;
+  }
+
+  .leadership-card h3 {
+    margin-top: 12px;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .leadership-card p {
+    font-size: 12.5px;
+    line-height: 18px;
+  }
+
+  .leadership-flow,
+  .operations-flow {
+    justify-content: flex-start;
+    margin-right: -20px;
+    padding-right: 20px;
+    border-right: 0;
+    border-radius: 12px 0 0 12px;
+  }
+
+  .operations-heading {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .operations-heading > p {
+    justify-self: start;
+  }
+
+  .operations-label {
+    margin-top: 24px;
+  }
+
+  .operations-system-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .operations-system-card {
+    min-height: auto;
+    padding: 16px;
+  }
+
+  .operations-closing {
+    font-size: 19px;
+    line-height: 27px;
+  }
+}
+
+@media (max-width: 440px) {
+  .leadership-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .leadership-card {
+    min-height: auto;
+  }
+}
