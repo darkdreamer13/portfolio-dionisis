@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Dionisios Iliopoulos — Digital Strategy, Content, Web and AI";
+export const alt = "Dionisios Iliopoulos — Digital Strategy, Project Leadership, Web and AI";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -28,7 +28,7 @@ export default async function Image({
         }}
       >
         <div style={{ display: "flex", color: "#6f9bff", fontSize: 24, letterSpacing: 2 }}>
-          DIGITAL STRATEGY · CONTENT · WEB · AI
+          DIGITAL STRATEGY · PROJECT LEADERSHIP · WEB · AI
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
           <div style={{ display: "flex", fontSize: 76, fontWeight: 700, lineHeight: 1 }}>
