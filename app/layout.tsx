@@ -19,11 +19,11 @@ const bodyFont = Source_Sans_3({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Dionisios Iliopoulos — Digital Strategy · Content · Web · AI",
+    default: "Dionisios Iliopoulos — Digital Strategy · Project Leadership · Web · AI",
     template: "%s",
   },
   description:
-    "Digital strategy, content, websites, AI, automation and project leadership by Dionisios Iliopoulos.",
+    "Digital strategy, project leadership, websites, AI, automation and cross-functional delivery by Dionisios Iliopoulos.",
   applicationName: "Dionisios Iliopoulos Portfolio",
   authors: [{ name: "Dionisios Iliopoulos", url: SITE_URL }],
   creator: "Dionisios Iliopoulos",
