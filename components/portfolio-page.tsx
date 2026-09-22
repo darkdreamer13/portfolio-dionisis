@@ -7,6 +7,8 @@ import MoreWorkModal from "@/components/more-work-modal";
 import ProfileModal from "@/components/profile-modal";
 import ProductionModal from "@/components/production-modal";
 import FloatingActions from "@/components/floating-actions";
+import ProjectLeadershipSection from "@/components/project-leadership-section";
+import ProjectOperationsSection from "@/components/project-operations-section";
 import { MobileCapabilities, MobileProcess, MobileSelectedWork } from "@/components/mobile-portfolio-sections";
 import { moreWorkCasesByLocale, projectsByLocale, siteCopy, type Locale } from "@/lib/content";
 
@@ -129,6 +131,7 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
         <nav className="desktop-nav" aria-label={locale === "el" ? "Κύρια πλοήγηση" : "Primary navigation"}>
           <a href="#work">{copy.nav.work}</a>
           <a href="#capabilities">{copy.nav.capabilities}</a>
+          <a href="#leadership">{copy.nav.leadership}</a>
           <a href="#about">{copy.nav.about}</a>
           <a href="#contact">{copy.nav.contact}</a>
         </nav>
@@ -165,6 +168,7 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
             {[
               ["#work", copy.nav.work],
               ["#capabilities", copy.nav.capabilities],
+              ["#leadership", copy.nav.leadership],
               ["#about", copy.nav.about],
               ["#contact", copy.nav.contact],
             ].map(([href, label]) => (
@@ -322,6 +326,8 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
       <MobileCapabilities locale={locale} copy={copy.capabilities} />
       </div>
 
+      <ProjectLeadershipSection locale={locale} copy={copy.projectLeadership} />
+
       <section className="section process desktop-only">
         <div className="section-heading">
           <div className="eyebrow">{copy.process.eyebrow}</div>
@@ -344,6 +350,8 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
         </div>
       </section>
       <MobileProcess locale={locale} copy={copy.process} />
+
+      <ProjectOperationsSection locale={locale} copy={copy.projectOperations} />
 
       <section className="ai-section">
         <div className="ai-orb" aria-hidden="true" />
