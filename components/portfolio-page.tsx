@@ -6,6 +6,7 @@ import ProjectModal from "@/components/project-modal";
 import MoreWorkModal from "@/components/more-work-modal";
 import ProfileModal from "@/components/profile-modal";
 import ProductionModal from "@/components/production-modal";
+import FloatingActions from "@/components/floating-actions";
 import { MobileCapabilities, MobileProcess, MobileSelectedWork } from "@/components/mobile-portfolio-sections";
 import { moreWorkCasesByLocale, projectsByLocale, siteCopy, type Locale } from "@/lib/content";
 
@@ -31,6 +32,7 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
   const [profileModal, setProfileModal] = useState<"about" | "thinking" | null>(null);
   const [productionModalOpen, setProductionModalOpen] = useState(false);
   const [moreWorkIndex, setMoreWorkIndex] = useState(0);
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
   const selectedProject = useMemo(
     () => projects.find((project) => project.id === selectedId) ?? null,
@@ -68,8 +70,9 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
   useEffect(() => {
     if (moreWorkCases.length <= 4 || selectedMoreWorkId) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (window.matchMedia("(max-width: 760px)").matches) return;
 
-    const timer = window.setInterval(() => rotateMoreWork(1), 5600);
+    const timer = window.setInterval(() => rotateMoreWork(1), 8000);
     return () => window.clearInterval(timer);
   }, [moreWorkCases.length, rotateMoreWork, selectedMoreWorkId]);
 
@@ -123,20 +126,54 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
         <Link href={"/" + locale} className="brand-name">
           {locale === "el" ? "Διονύσης Ηλιόπουλος" : "Dionisios Iliopoulos"}
         </Link>
-        <nav className="desktop-nav" aria-label="Primary navigation">
+        <nav className="desktop-nav" aria-label={locale === "el" ? "Κύρια πλοήγηση" : "Primary navigation"}>
           <a href="#work">{copy.nav.work}</a>
           <a href="#capabilities">{copy.nav.capabilities}</a>
           <a href="#about">{copy.nav.about}</a>
           <a href="#contact">{copy.nav.contact}</a>
         </nav>
         <div className="header-actions">
-          <Link className="language-switch" href={locale === "el" ? "/en" : "/el"}>
+          <Link
+            className="language-switch"
+            href={locale === "el" ? "/en" : "/el"}
+            aria-label={locale === "el" ? "Switch to English" : "Αλλαγή στα Ελληνικά"}
+          >
             {locale === "el" ? "EN" : "EL"}
           </Link>
           <a className="button button-primary header-cta" href={EMAIL_HREF}>
             {copy.nav.talk}
           </a>
+          <button
+            type="button"
+            className="mobile-menu-toggle"
+            aria-expanded={mobileNavOpen}
+            aria-controls="mobile-nav-panel"
+            aria-label={locale === "el" ? "Άνοιγμα μενού" : "Open menu"}
+            onClick={() => setMobileNavOpen((open) => !open)}
+          >
+            <span />
+            <span />
+          </button>
         </div>
+
+        {mobileNavOpen ? (
+          <nav
+            id="mobile-nav-panel"
+            className="mobile-nav-panel"
+            aria-label={locale === "el" ? "Πλοήγηση ενότητας" : "Section navigation"}
+          >
+            {[
+              ["#work", copy.nav.work],
+              ["#capabilities", copy.nav.capabilities],
+              ["#about", copy.nav.about],
+              ["#contact", copy.nav.contact],
+            ].map(([href, label]) => (
+              <a key={href} href={href} onClick={() => setMobileNavOpen(false)}>
+                {label}
+              </a>
+            ))}
+          </nav>
+        ) : null}
       </header>
 
       <section className="hero">
@@ -507,6 +544,10 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
           locale={locale}
           onClose={() => setProductionModalOpen(false)}
         />
+      ) : null}
+
+      {!selectedProject && !selectedMoreWork && !profileModal && !productionModalOpen ? (
+        <FloatingActions locale={locale} />
       ) : null}
     </main>
   );
