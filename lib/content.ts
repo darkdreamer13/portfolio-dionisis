@@ -1116,7 +1116,7 @@ const greekMoreWorkCases: MoreWorkCase[] = [
     title: "Ketobox",
     period: "2024",
     tags: ["Marketing Strategy", "Research", "Content Strategy", "SEO", "KPI Framework"],
-    logo: "/assets/more-work/ketobox.webp",
+    logo: "/assets/more-work/logo_ketobox.png",
     paragraphs: [
       "Το Ketobox ήταν ένα strategy-led project με στόχο να οργανωθεί ένα ολοκληρωμένο 12μηνο marketing plan γύρω από το προϊόν. Η δουλειά ξεκίνησε από ανάλυση υπάρχουσας κατάστασης, ανταγωνισμού και κοινού-στόχου και επεκτάθηκε σε branding direction, content marketing, paid promotion, SEO, χρονοδιάγραμμα ενεργειών και KPI framework.",
       "Παράλληλα οργανώθηκε ένα πρακτικό content system για blog, social media, newsletters και short-form video, με θεματολογία, συχνότητα, κανάλια και συγκεκριμένα CTAs. Η στρατηγική υποστηρίχθηκε από keyword research, audience / community insights και δομημένα spreadsheets για planning και παρακολούθηση.",
@@ -1217,7 +1217,7 @@ const englishMoreWorkCases: MoreWorkCase[] = [
     title: "Ketobox",
     period: "2024",
     tags: ["Marketing Strategy", "Research", "Content Strategy", "SEO", "KPI Framework"],
-    logo: "/assets/more-work/ketobox.webp",
+    logo: "/assets/more-work/logo_ketobox.png",
     paragraphs: [
       "Ketobox was a strategy-led project built around a complete 12-month marketing plan for the product. The work started with current-state, competitor and audience analysis and expanded into brand direction, content marketing, paid promotion, SEO, an action timeline and KPI framework.",
       "In parallel, I organized a practical content system across blog, social media, newsletters and short-form video, with themes, cadence, channels and specific CTAs. The strategy was supported by keyword research, audience / community insights and structured spreadsheets for planning and performance tracking.",
