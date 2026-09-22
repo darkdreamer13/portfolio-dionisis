@@ -120,8 +120,31 @@ export const siteCopy = {
         "Δεν ξεκινώ από το ποιο εργαλείο θα χρησιμοποιήσουμε, αλλά από το τι πρέπει να λειτουργήσει καλύτερα.",
     },
     ai: {
+      eyebrow: "AI & AUTOMATION",
       title: "AI ως εργαλείο. Όχι ως μοναδική πηγή αλήθειας.",
-      items: ["Custom GPTs", "AI-assisted Development", "Workflow Automation", "Content Research", "Internal Tools"],
+      paragraphs: [
+        "Χρησιμοποιώ την τεχνητή νοημοσύνη καθημερινά στην έρευνα, το content, το development και την αυτοματοποίηση διαδικασιών.",
+        "Δεν αντιμετωπίζω όμως το AI output ως τελικό αποτέλεσμα ή ως δεδομένο που πρέπει να γίνει αποδεκτό χωρίς έλεγχο. Οι πληροφορίες διασταυρώνονται, τα outputs αξιολογούνται και η τελική απόφαση παραμένει ανθρώπινη.",
+      ],
+      items: [
+        {
+          title: "Advanced Prompting",
+          body: "Σχεδιασμός prompts και πολυσταδιακών workflows για research, analysis, content, development και operations.",
+        },
+        {
+          title: "Custom GPTs",
+          body: "Δημιουργία custom GPTs για συγκεκριμένες επιχειρηματικές ανάγκες, με tailored instructions, knowledge bases και συγκεκριμένες διαδικασίες εργασίας.",
+        },
+        {
+          title: "AI-Assisted Development",
+          body: "Χρήση AI για τη δημιουργία websites, web applications, interfaces, backends και εσωτερικών εργαλείων.",
+        },
+        {
+          title: "AI & Automation",
+          body: "Σύνδεση AI με APIs, CMS, Google services και marketing platforms για πραγματικές επιχειρησιακές διαδικασίες.",
+        },
+      ],
+      highlight: "Η αξία δεν βρίσκεται στο να «ρωτήσεις το AI». Βρίσκεται στο να ξέρεις τι να του ζητήσεις, τι να ελέγξεις και πώς να χρησιμοποιήσεις το αποτέλεσμα.",
     },
     production: {
       eyebrow: "CONTENT & PRODUCTION",
@@ -260,8 +283,31 @@ export const siteCopy = {
         "I do not start with which tool we will use. I start with what needs to work better.",
     },
     ai: {
+      eyebrow: "AI & AUTOMATION",
       title: "AI as a tool. Not as the single source of truth.",
-      items: ["Custom GPTs", "AI-assisted Development", "Workflow Automation", "Content Research", "Internal Tools"],
+      paragraphs: [
+        "I use artificial intelligence every day across research, content, development and process automation.",
+        "I do not treat AI output as a finished result or as information that should be accepted without review. Sources are cross-checked, outputs are evaluated and the final decision remains human.",
+      ],
+      items: [
+        {
+          title: "Advanced Prompting",
+          body: "Prompt design and multi-step workflows for research, analysis, content, development and operations.",
+        },
+        {
+          title: "Custom GPTs",
+          body: "Custom GPTs for specific business needs, with tailored instructions, knowledge bases and defined working processes.",
+        },
+        {
+          title: "AI-Assisted Development",
+          body: "Using AI to build websites, web applications, interfaces, backends and internal tools.",
+        },
+        {
+          title: "AI & Automation",
+          body: "Connecting AI with APIs, CMS platforms, Google services and marketing platforms for real business workflows.",
+        },
+      ],
+      highlight: "The value is not in simply asking AI. It is in knowing what to ask, what to verify and how to use the result.",
     },
     production: {
       eyebrow: "CONTENT & PRODUCTION",

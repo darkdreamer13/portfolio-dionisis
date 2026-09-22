@@ -284,15 +284,30 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
 
       <section className="ai-section">
         <div className="ai-orb" aria-hidden="true" />
-        <h2>{copy.ai.title}</h2>
-        <div className="ai-rail">
+
+        <div className="ai-copy">
+          <div className="eyebrow ai-eyebrow">{copy.ai.eyebrow}</div>
+          <h2>{copy.ai.title}</h2>
+          <div className="ai-intro">
+            {copy.ai.paragraphs.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
+        </div>
+
+        <div className="ai-capability-grid">
           {copy.ai.items.map((item, index) => (
-            <article key={item}>
+            <article key={item.title} className="ai-capability-card">
               <span>{String(index + 1).padStart(2, "0")}</span>
-              <strong>{item}</strong>
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
             </article>
           ))}
         </div>
+
+        <blockquote className="ai-highlight">
+          {copy.ai.highlight}
+        </blockquote>
       </section>
 
       <section className="production-collaboration">
