@@ -184,6 +184,7 @@ export const siteCopy = {
         ["ES Beauty Studio", "Web · UX/UI · SEO"],
         ["Eleni Stathopoulou", "Branding · Web · SEO"],
         ["Kiosque", "Web · Local SEO · Social"],
+        ["Ketobox", "Marketing Strategy · Content · SEO"],
       ],
     },
     results: {
@@ -350,6 +351,7 @@ export const siteCopy = {
         ["ES Beauty Studio", "Web · UX/UI · SEO"],
         ["Eleni Stathopoulou", "Branding · Web · SEO"],
         ["Kiosque", "Web · Local SEO · Social"],
+        ["Ketobox", "Marketing Strategy · Content · SEO"],
       ],
     },
     results: {
@@ -1109,6 +1111,20 @@ const greekMoreWorkCases: MoreWorkCase[] = [
     closing: "Ένα local-retail project όπου website, αναζήτηση και social σχεδιάστηκαν γύρω από μια απλή ερώτηση: ποιο Kiosque είναι ανοιχτό και πιο κοντά μου;",
   },
 
+  {
+    id: "ketobox",
+    title: "Ketobox",
+    period: "2024",
+    tags: ["Marketing Strategy", "Research", "Content Strategy", "SEO", "KPI Framework"],
+    logo: "/assets/more-work/ketobox.webp",
+    paragraphs: [
+      "Το Ketobox ήταν ένα strategy-led project με στόχο να οργανωθεί ένα ολοκληρωμένο 12μηνο marketing plan γύρω από το προϊόν. Η δουλειά ξεκίνησε από ανάλυση υπάρχουσας κατάστασης, ανταγωνισμού και κοινού-στόχου και επεκτάθηκε σε branding direction, content marketing, paid promotion, SEO, χρονοδιάγραμμα ενεργειών και KPI framework.",
+      "Παράλληλα οργανώθηκε ένα πρακτικό content system για blog, social media, newsletters και short-form video, με θεματολογία, συχνότητα, κανάλια και συγκεκριμένα CTAs. Η στρατηγική υποστηρίχθηκε από keyword research, audience / community insights και δομημένα spreadsheets για planning και παρακολούθηση.",
+    ],
+    role: "Market Research · Audience Analysis · Brand Strategy · 12-Month Marketing Plan · Content Strategy · SEO Strategy · KPI Framework · Content Planning",
+    closing: "Ένα project όπου research, brand, content, SEO και measurement οργανώθηκαν σε ένα ενιαίο πλάνο δράσης.",
+  },
+
 ];
 
 const englishMoreWorkCases: MoreWorkCase[] = [
@@ -1194,6 +1210,20 @@ const englishMoreWorkCases: MoreWorkCase[] = [
     ],
     role: "Research · Digital Strategy · Content Strategy · Copywriting · Next.js Development · Geolocation UX · Local SEO · Social Media Management",
     closing: "A local-retail project where the website, search and social were built around one simple question: which Kiosque is open and closest to me?",
+  },
+
+  {
+    id: "ketobox",
+    title: "Ketobox",
+    period: "2024",
+    tags: ["Marketing Strategy", "Research", "Content Strategy", "SEO", "KPI Framework"],
+    logo: "/assets/more-work/ketobox.webp",
+    paragraphs: [
+      "Ketobox was a strategy-led project built around a complete 12-month marketing plan for the product. The work started with current-state, competitor and audience analysis and expanded into brand direction, content marketing, paid promotion, SEO, an action timeline and KPI framework.",
+      "In parallel, I organized a practical content system across blog, social media, newsletters and short-form video, with themes, cadence, channels and specific CTAs. The strategy was supported by keyword research, audience / community insights and structured spreadsheets for planning and performance tracking.",
+    ],
+    role: "Market Research · Audience Analysis · Brand Strategy · 12-Month Marketing Plan · Content Strategy · SEO Strategy · KPI Framework · Content Planning",
+    closing: "A project where research, brand, content, SEO and measurement were organized into one actionable operating plan.",
   },
 
 ];
