@@ -3678,3 +3678,265 @@ main {
   .mobile-rail-card.project-dora-nikolaidou .mobile-rail-visual img { width: 64%; height: 58%; }
   .mobile-rail-card.project-leclat-beaute .mobile-rail-visual img { width: 55%; height: 58%; }
 }
+
+
+/* Typography refresh — Manrope for display, Source Sans 3 for reading */
+body {
+  font-family: var(--font-body), "Source Sans 3", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.brand-name,
+.hero-accent,
+.project-card-copy strong,
+.thinking-card > strong,
+.collaboration-closing,
+.case-tagline,
+.more-work-copy strong,
+.mobile-featured-copy strong,
+.mobile-rail-card > strong,
+.profile-closing,
+.production-modal-closing,
+.ai-highlight {
+  font-family: var(--font-heading), Manrope, Arial, sans-serif;
+}
+
+.hero-description {
+  font-size: 17px;
+  line-height: 26px;
+}
+
+.about-block p,
+.production-copy p,
+.collaboration-card > p,
+.ai-intro p {
+  font-size: 16px;
+  line-height: 25px;
+}
+
+.case-intro p,
+.case-section p,
+.more-work-text p,
+.profile-intro p,
+.profile-today p,
+.production-modal-intro,
+.production-responsibility p,
+.production-scale p,
+.production-examples > p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+#about,
+#contact,
+.section-anchor-wrap {
+  scroll-margin-top: 82px;
+}
+
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible {
+  outline: 3px solid rgba(20, 93, 255, 0.35);
+  outline-offset: 3px;
+}
+
+/* Responsive header navigation */
+.mobile-menu-toggle,
+.mobile-nav-panel {
+  display: none;
+}
+
+@media (max-width: 1180px) {
+  .mobile-menu-toggle {
+    display: inline-flex;
+    width: 44px;
+    height: 44px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 0;
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    background: white;
+    cursor: pointer;
+  }
+
+  .mobile-menu-toggle span {
+    width: 17px;
+    height: 1.5px;
+    border-radius: 999px;
+    background: var(--color-text-primary);
+  }
+
+  .mobile-nav-panel {
+    position: absolute;
+    z-index: 60;
+    top: calc(100% + 8px);
+    right: 20px;
+    display: grid;
+    width: min(280px, calc(100vw - 40px));
+    padding: 8px;
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 18px 44px rgba(17, 24, 39, 0.14);
+    backdrop-filter: blur(14px);
+  }
+
+  .mobile-nav-panel a {
+    display: flex;
+    min-height: 46px;
+    align-items: center;
+    padding: 0 12px;
+    border-radius: 9px;
+    color: var(--color-text-secondary);
+    font-weight: 600;
+  }
+
+  .mobile-nav-panel a:hover,
+  .mobile-nav-panel a:focus-visible {
+    background: #f3f6fb;
+    color: var(--color-accent);
+  }
+}
+
+.language-switch {
+  display: inline-flex;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Floating contact dock */
+.floating-actions {
+  position: fixed;
+  z-index: 45;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 7px;
+  border: 1px solid rgba(228, 231, 236, 0.92);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 14px 42px rgba(17, 24, 39, 0.16);
+  backdrop-filter: blur(14px);
+}
+
+.floating-action {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 13px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  color: var(--color-text-primary);
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.floating-action svg {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+}
+
+.floating-action-whatsapp {
+  background: var(--color-bg-dark);
+  color: white;
+}
+
+.floating-action-call,
+.floating-action-cv {
+  border-color: var(--color-border);
+  background: white;
+}
+
+.floating-action:hover {
+  transform: translateY(-1px);
+}
+
+@media (max-width: 760px) {
+  .hero-copy h1 {
+    font-size: 40px;
+    line-height: 44px;
+    letter-spacing: -0.6px;
+  }
+
+  .hero-accent {
+    font-size: 35px;
+    line-height: 40px;
+    letter-spacing: -0.5px;
+  }
+
+  .hero-description,
+  .mobile-featured-copy span {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .mobile-process-detail p {
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+  .mobile-process-selector button {
+    width: 44px;
+    height: 44px;
+    font-size: 11px;
+  }
+
+  .mobile-process-line {
+    top: 21px;
+  }
+
+  .more-work-controls button {
+    width: 44px;
+    height: 44px;
+  }
+
+  .modal-close {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  main {
+    padding-bottom: calc(82px + env(safe-area-inset-bottom));
+  }
+
+  .floating-actions {
+    right: 12px;
+    left: 12px;
+    bottom: max(10px, env(safe-area-inset-bottom));
+    display: grid;
+    grid-template-columns: 1.25fr 1fr 0.85fr;
+    gap: 6px;
+    padding: 6px;
+    border-radius: 16px;
+  }
+
+  .floating-action {
+    min-width: 0;
+    min-height: 48px;
+    gap: 6px;
+    padding: 0 8px;
+    font-size: 12px;
+  }
+
+  .floating-action svg {
+    width: 17px;
+    height: 17px;
+  }
+}
