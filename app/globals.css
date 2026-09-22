@@ -3598,3 +3598,83 @@ main {
     line-height: 28px;
   }
 }
+
+
+/* More Work circular wheel: always four visible slots, regardless of total project count */
+.more-work-heading-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.more-work-heading-row .section-heading {
+  margin: 0;
+}
+
+.more-work-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 auto;
+}
+
+.more-work-controls button {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: 9px;
+  background: white;
+  color: var(--color-text-primary);
+  font-size: 17px;
+  cursor: pointer;
+  transition: border-color 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.more-work-controls button:hover,
+.more-work-controls button:focus-visible {
+  border-color: rgba(20, 93, 255, 0.5);
+  color: var(--color-accent);
+  outline: none;
+  transform: translateY(-1px);
+}
+
+.more-work-controls > span {
+  min-width: 54px;
+  color: var(--color-text-secondary);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 0.6px;
+  text-align: center;
+}
+
+.more-work-wheel {
+  min-height: 79px;
+}
+
+.more-work-wheel-item {
+  animation: moreWorkWheelIn 330ms ease both;
+}
+
+@keyframes moreWorkWheelIn {
+  from { opacity: 0; transform: translateX(10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .more-work-wheel-item { animation: none; }
+}
+
+@media (max-width: 760px) {
+  .more-work-heading-row { align-items: flex-start; }
+  .more-work-controls { margin-top: 2px; }
+  .more-work-controls button { width: 32px; height: 32px; }
+  .more-work-controls > span { display: none; }
+
+  .mobile-featured-project.project-dora-nikolaidou .mobile-featured-visual img { width: 70%; height: 66%; }
+  .mobile-featured-project.project-leclat-beaute .mobile-featured-visual img { width: 62%; height: 66%; }
+  .mobile-rail-card.project-dora-nikolaidou .mobile-rail-visual img { width: 64%; height: 58%; }
+  .mobile-rail-card.project-leclat-beaute .mobile-rail-visual img { width: 55%; height: 58%; }
+}

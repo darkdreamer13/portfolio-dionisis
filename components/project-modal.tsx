@@ -18,8 +18,8 @@ type ModalLabels = {
 const FEATURED_COUNTS: Record<string, number> = {
   promoters: 2,
   tma: 3,
-  "es-beauty": 2,
-  "eleni-stathopoulou": 2,
+  "dora-nikolaidou": 1,
+  "leclat-beaute": 1,
   pinkberry: 1,
   notias: 2,
 };

@@ -15,12 +15,6 @@ const productionImages = [
   "/assets/production-food.png",
 ];
 
-const MORE_WORK_LOGOS: Record<string, string> = {
-  "Pralina Pastry": "/assets/more-work/pralina.jpeg",
-  "CrazyBloom": "/assets/more-work/crazybloom.jpeg",
-  "Ipsipetis Travel": "/assets/more-work/ipsipetis.png",
-  "PHAOS": "/assets/more-work/phaos.jpeg",
-};
 
 const EMAIL_HREF = "mailto:geo178@hotmail.com";
 const PHONE_HREF = "tel:+306973635835";
@@ -36,6 +30,7 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
   const [selectedMoreWorkId, setSelectedMoreWorkId] = useState<string | null>(null);
   const [profileModal, setProfileModal] = useState<"about" | "thinking" | null>(null);
   const [productionModalOpen, setProductionModalOpen] = useState(false);
+  const [moreWorkIndex, setMoreWorkIndex] = useState(0);
 
   const selectedProject = useMemo(
     () => projects.find((project) => project.id === selectedId) ?? null,
@@ -46,6 +41,37 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
     () => moreWorkCases.find((project) => project.id === selectedMoreWorkId) ?? null,
     [moreWorkCases, selectedMoreWorkId],
   );
+
+  const visibleMoreWork = useMemo(() => {
+    const visibleCount = Math.min(4, moreWorkCases.length);
+    return Array.from({ length: visibleCount }, (_, offset) => {
+      const sourceIndex = (moreWorkIndex + offset) % moreWorkCases.length;
+      return {
+        project: moreWorkCases[sourceIndex],
+        descriptor:
+          copy.moreWork.items[sourceIndex]?.[1] ??
+          moreWorkCases[sourceIndex].tags.slice(0, 2).join(" · "),
+      };
+    });
+  }, [copy.moreWork.items, moreWorkCases, moreWorkIndex]);
+
+  const rotateMoreWork = useCallback(
+    (direction: 1 | -1) => {
+      setMoreWorkIndex((current) => {
+        if (moreWorkCases.length === 0) return 0;
+        return (current + direction + moreWorkCases.length) % moreWorkCases.length;
+      });
+    },
+    [moreWorkCases.length],
+  );
+
+  useEffect(() => {
+    if (moreWorkCases.length <= 4 || selectedMoreWorkId) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const timer = window.setInterval(() => rotateMoreWork(1), 5600);
+    return () => window.clearInterval(timer);
+  }, [moreWorkCases.length, rotateMoreWork, selectedMoreWorkId]);
 
   const closeProject = useCallback(() => {
     setSelectedId(null);
@@ -353,32 +379,40 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
       </section>
 
       <section className="section more-work">
-        <div className="section-heading">
-          <div className="eyebrow">{copy.moreWork.eyebrow}</div>
-          <h2>{copy.moreWork.title}</h2>
+        <div className="more-work-heading-row">
+          <div className="section-heading">
+            <div className="eyebrow">{copy.moreWork.eyebrow}</div>
+            <h2>{copy.moreWork.title}</h2>
+          </div>
+
+          {moreWorkCases.length > 4 ? (
+            <div className="more-work-controls" aria-label={locale === "el" ? "Πλοήγηση projects" : "Project navigation"}>
+              <button type="button" onClick={() => rotateMoreWork(-1)} aria-label={locale === "el" ? "Προηγούμενα projects" : "Previous projects"}>←</button>
+              <span>{String(moreWorkIndex + 1).padStart(2, "0")} / {String(moreWorkCases.length).padStart(2, "0")}</span>
+              <button type="button" onClick={() => rotateMoreWork(1)} aria-label={locale === "el" ? "Επόμενα projects" : "Next projects"}>→</button>
+            </div>
+          ) : null}
         </div>
-        <div className="more-work-grid">
-          {copy.moreWork.items.map(([name, descriptor], index) => {
-            const project = moreWorkCases[index];
-            return (
-              <button
-                key={name}
-                type="button"
-                className="more-work-item"
-                onClick={() => openMoreWork(project.id)}
-                aria-label={name + " — " + descriptor}
-              >
-                <div className="more-work-logo" aria-hidden="true">
-                  <img src={MORE_WORK_LOGOS[name]} alt="" />
-                </div>
-                <div className="more-work-copy">
-                  <strong>{name}</strong>
-                  <span>{descriptor}</span>
-                </div>
-                <span className="more-work-arrow" aria-hidden="true">↗</span>
-              </button>
-            );
-          })}
+
+        <div className="more-work-grid more-work-wheel">
+          {visibleMoreWork.map(({ project, descriptor }) => (
+            <button
+              key={project.id + "-" + moreWorkIndex}
+              type="button"
+              className="more-work-item more-work-wheel-item"
+              onClick={() => openMoreWork(project.id)}
+              aria-label={project.title + " — " + descriptor}
+            >
+              <div className="more-work-logo" aria-hidden="true">
+                <img src={project.logo} alt="" />
+              </div>
+              <div className="more-work-copy">
+                <strong>{project.title}</strong>
+                <span>{descriptor}</span>
+              </div>
+              <span className="more-work-arrow" aria-hidden="true">↗</span>
+            </button>
+          ))}
         </div>
       </section>
 
