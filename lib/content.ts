@@ -183,6 +183,7 @@ export const siteCopy = {
         ["PHAOS", "Digital consulting & content"],
         ["ES Beauty Studio", "Web · UX/UI · SEO"],
         ["Eleni Stathopoulou", "Branding · Web · SEO"],
+        ["Kiosque", "Web · Local SEO · Social"],
       ],
     },
     results: {
@@ -348,6 +349,7 @@ export const siteCopy = {
         ["PHAOS", "Digital consulting & content"],
         ["ES Beauty Studio", "Web · UX/UI · SEO"],
         ["Eleni Stathopoulou", "Branding · Web · SEO"],
+        ["Kiosque", "Web · Local SEO · Social"],
       ],
     },
     results: {
@@ -1093,6 +1095,20 @@ const greekMoreWorkCases: MoreWorkCase[] = [
     liveUrl: "https://elenistathopoulou.com",
   },
 
+  {
+    id: "kiosque",
+    title: "Kiosque",
+    period: "07/2025–10/2025",
+    tags: ["Digital Strategy", "Website", "Local SEO", "Social Media", "Geolocation"],
+    logo: "/assets/more-work/kiosque.svg",
+    paragraphs: [
+      "Η συνεργασία με το Kiosque έτρεξε από τον Ιούλιο έως τον Οκτώβριο του 2025 και συνδύασε digital strategy, website και τρίμηνη διαχείριση social media για το brand και τα καταστήματα σε Καλαμάτα και Πετρούπολη.",
+      "Η βασική εμπειρία σχεδιάστηκε ως one-page Next.js website με geolocation ώστε ο χρήστης να οδηγείται στο κοντινότερο κατάστημα, μαζί με στοιχεία καταστημάτων, χάρτες και σαφή local information. Παράλληλα οργανώθηκαν local SEO και search-intent research ανά περιοχή, structured data και υποστηρικτικές SEO διαδρομές, ενώ το social content προσαρμόστηκε στις διαφορετικές ανάγκες των δύο τοποθεσιών.",
+    ],
+    role: "Research · Digital Strategy · Content Strategy · Copywriting · Next.js Development · Geolocation UX · Local SEO · Social Media Management",
+    closing: "Ένα local-retail project όπου website, αναζήτηση και social σχεδιάστηκαν γύρω από μια απλή ερώτηση: ποιο Kiosque είναι ανοιχτό και πιο κοντά μου;",
+  },
+
 ];
 
 const englishMoreWorkCases: MoreWorkCase[] = [
@@ -1164,6 +1180,20 @@ const englishMoreWorkCases: MoreWorkCase[] = [
     role: "Research · Positioning · Copywriting · Development · Sanity CMS · Technical SEO",
     closing: "A personal bridal brand built from research and positioning through to code.",
     liveUrl: "https://elenistathopoulou.com",
+  },
+
+  {
+    id: "kiosque",
+    title: "Kiosque",
+    period: "07/2025–10/2025",
+    tags: ["Digital Strategy", "Website", "Local SEO", "Social Media", "Geolocation"],
+    logo: "/assets/more-work/kiosque.svg",
+    paragraphs: [
+      "The Kiosque project ran from July to October 2025 and combined digital strategy, website development and three months of social media management for the brand and its stores in Kalamata and Petroupoli.",
+      "The core experience was designed as a one-page Next.js website with geolocation to guide users toward the nearest store, supported by store information, maps and clear local information. In parallel, I developed location-specific local SEO and search-intent research, structured data and supporting SEO routes, while social content was adapted to the different needs of each location.",
+    ],
+    role: "Research · Digital Strategy · Content Strategy · Copywriting · Next.js Development · Geolocation UX · Local SEO · Social Media Management",
+    closing: "A local-retail project where the website, search and social were built around one simple question: which Kiosque is open and closest to me?",
   },
 
 ];
