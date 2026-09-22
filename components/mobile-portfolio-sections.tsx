@@ -111,7 +111,7 @@ export function MobileCapabilities({
       </div>
 
       <div className="mobile-capability-footer">
-        <span>{locale === "el" ? "Tap για περισσότερα" : "Tap for more"}</span>
+        <span>{locale === "el" ? "6 βασικοί άξονες" : "6 core capabilities"}</span>
         <a href="#about">{copy.link}</a>
       </div>
     </section>
