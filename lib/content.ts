@@ -60,16 +60,17 @@ export const siteCopy = {
     nav: {
       work: "Έργα",
       capabilities: "Δυνατότητες",
+      leadership: "Leadership",
       about: "Σχετικά",
       contact: "Επικοινωνία",
       talk: "Ας συζητήσουμε →",
     },
     hero: {
-      eyebrow: "DIGITAL STRATEGY · CONTENT · WEB · AI",
+      eyebrow: "DIGITAL STRATEGY · PROJECT LEADERSHIP · WEB · AI",
       title: "Στρατηγική, περιεχόμενο και τεχνολογία.",
       accent: "Σε ένα ενιαίο digital project.",
       description:
-        "Συνδέω στρατηγική, δημιουργικότητα, τεχνολογία και τους κατάλληλους ανθρώπους γύρω από κάθε project, για να δημιουργούμε ουσιαστικά αποτελέσματα.",
+        "Αναλαμβάνω σύνθετα digital projects από τη στρατηγική και τον σχεδιασμό μέχρι τον συντονισμό της ομάδας, την υλοποίηση και το reporting. Συνδέω ανθρώπους, εργαλεία και παραδοτέα σε ένα καθαρό σύστημα εργασίας.",
       primary: "Δείτε τα έργα μου →",
       secondary: "Ας συζητήσουμε",
       location: "⌖ Καλαμάτα, Ελλάδα · Συνεργασίες στην Ελλάδα & εξ αποστάσεως",
@@ -79,8 +80,8 @@ export const siteCopy = {
       noteD: "Digital product",
       metric: "+40%",
       metricLabel: "Leads growth",
-      words: ["Ideas", "Strategy", "Content", "Technology", "People"],
-      greekWords: ["Στρατηγική", "Συνεργασία.", "Αποτελέσματα."],
+      words: ["Ideas", "Strategy", "Leadership", "Technology", "People"],
+      greekWords: ["Στρατηγική", "Συντονισμός.", "Αποτελέσματα."],
     },
     selected: {
       eyebrow: "SELECTED WORK",
@@ -97,7 +98,7 @@ export const siteCopy = {
       title: "Όσα χρειάζονται, όταν χρειάζονται.",
       link: "Δείτε αναλυτικά →",
       items: [
-        ["Strategy & Project Leadership", "Από τη μεγάλη εικόνα έως την υλοποίηση."],
+        ["Strategy & Project Leadership", "Scope, ομάδες, dependencies, approvals και delivery — από τον επιχειρηματικό στόχο έως την ολοκλήρωση."],
         ["Websites & Digital Products", "Ιστοσελίδες και ψηφιακά προϊόντα που δουλεύουν."],
         ["Content & Social", "Περιεχόμενο με σκοπό και συνέπεια."],
         ["AI & Automation", "Αυτοματοποίηση που εξοικονομεί χρόνο και δημιουργεί ευκαιρίες."],
@@ -105,19 +106,80 @@ export const siteCopy = {
         ["Advertising & Campaigns", "Στοχευμένες καμπάνιες με μετρήσιμα αποτελέσματα."],
       ],
     },
+    projectLeadership: {
+      eyebrow: "PROJECT LEADERSHIP",
+      title: "Από το brief έως την παράδοση — με καθαρή ευθύνη.",
+      intro:
+        "Ένα σύνθετο digital project δεν χρειάζεται μόνο καλές ιδέες. Χρειάζεται σαφές scope, σωστή σειρά εργασιών, ξεκάθαρους owners, έγκαιρες αποφάσεις και συνεχή εικόνα του τι έχει ολοκληρωθεί, τι εκκρεμεί και τι μπορεί να καθυστερήσει.",
+      items: [
+        {
+          number: "01",
+          title: "Project Architecture",
+          body: "Μετατρέπω τον επιχειρηματικό στόχο σε φάσεις, παραδοτέα, tasks, dependencies και approval gates.",
+        },
+        {
+          number: "02",
+          title: "Team & Stakeholder Coordination",
+          body: "Συντονίζω πελάτες και specialists με σαφή briefs, owners, προθεσμίες και επόμενες ενέργειες.",
+        },
+        {
+          number: "03",
+          title: "Scope, Risk & Quality Control",
+          body: "Παρακολουθώ blockers, revisions, αλλαγές scope, πρόσθετη εργασία, QA και launch readiness.",
+        },
+        {
+          number: "04",
+          title: "Reporting & Operational Visibility",
+          body: "Συνδέω tasks, αρχεία, approvals και KPIs ώστε ομάδα και πελάτης να βλέπουν την πραγματική κατάσταση του project.",
+        },
+      ],
+      flow: ["Scope", "Owners", "Dependencies", "Execution", "Approval", "Reporting"],
+    },
+    projectOperations: {
+      eyebrow: "PROJECT OPERATIONS",
+      title: "Έτσι οργανώνω ένα σύνθετο digital project.",
+      intro:
+        "Όταν ένα project περιλαμβάνει διαφορετικές ειδικότητες, παραδοτέα, approvals και δεδομένα, το ζητούμενο δεν είναι να υπάρχουν περισσότερα εργαλεία. Είναι να υπάρχει ένα σύστημα που δείχνει ποιος κάνει τι, τι έχει εγκριθεί, τι εκκρεμεί και ποιο είναι το επόμενο βήμα.",
+      systemsLabel: "OPERATING SYSTEMS I BUILD",
+      systems: [
+        {
+          title: "ASANA",
+          subtitle: "Execution & Ownership",
+          body: "Tasks, owners, deadlines, dependencies και blockers σε μία κοινή εικόνα εκτέλεσης.",
+        },
+        {
+          title: "GOOGLE DRIVE",
+          subtitle: "Files & Version Control",
+          body: "Working files, approved versions, final assets και evidence με ξεκάθαρη δομή και πρόσβαση.",
+        },
+        {
+          title: "GOOGLE SHEETS",
+          subtitle: "Reporting & Control",
+          body: "Deliverables, KPIs, paid activity, revisions και extra hours σε δομημένο reporting layer.",
+        },
+        {
+          title: "CLIENT APPROVAL FLOW",
+          subtitle: "Decisions & Audit Trail",
+          body: "Approvals, rejection reasons, revision history και notifications ώστε οι αποφάσεις να μη χάνονται.",
+        },
+      ],
+      flow: ["Brief", "Scope", "Owners", "Execution", "Review", "Approval", "Reporting"],
+      closing:
+        "Το project management για μένα δεν είναι περισσότερα meetings. Είναι λιγότερη ασάφεια, λιγότερες χαμένες αποφάσεις και πιο καθαρή ευθύνη.",
+    },
     process: {
       eyebrow: "PROCESS",
-      title: "Ένας απλός, καθαρός τρόπος δουλειάς.",
+      title: "Ένας καθαρός τρόπος να κινείται το project.",
       items: [
-        ["01", "Κατανόηση", "Τι χρειάζεται πραγματικά;"],
-        ["02", "Έρευνα", "Δεδομένα, ανταγωνισμός, ευκαιρίες."],
-        ["03", "Στρατηγική", "Ξεκάθαρη κατεύθυνση και πλάνο."],
-        ["04", "Σχεδιασμός", "Ιδέες που γίνονται πράξη."],
-        ["05", "Υλοποίηση", "Με συνέπεια και ποιότητα."],
-        ["06", "Βελτίωση", "Μετράμε, μαθαίνουμε, εξελίσσουμε."],
+        ["01", "Discovery & Scope", "Στόχοι, περιορισμοί, stakeholders και ορισμός του πραγματικού προβλήματος."],
+        ["02", "Project Architecture", "Φάσεις, παραδοτέα, owners, dependencies, εργαλεία και approval points."],
+        ["03", "Briefing & Coordination", "Σωστά inputs, σαφείς ευθύνες και κοινή κατανόηση της κατεύθυνσης."],
+        ["04", "Execution & Quality Control", "Παραγωγή, reviews, blockers, versions και έλεγχος ποιότητας."],
+        ["05", "Approval & Delivery", "Συγκεκριμένη έκδοση, καταγεγραμμένη απόφαση και ελεγχόμενη παράδοση."],
+        ["06", "Reporting & Improvement", "KPIs, συμπεράσματα, επόμενες προτεραιότητες και βελτίωση του συστήματος."],
       ],
       statement:
-        "Δεν ξεκινώ από το ποιο εργαλείο θα χρησιμοποιήσουμε, αλλά από το τι πρέπει να λειτουργήσει καλύτερα.",
+        "Κάθε στάδιο πρέπει να αφήνει πίσω του σαφή απόφαση, owner και επόμενο βήμα.",
     },
     ai: {
       eyebrow: "AI & AUTOMATION",
@@ -155,7 +217,7 @@ export const siteCopy = {
     collaboration: {
       eyebrow: "COLLABORATION",
       title: "Προσωπική ευθύνη, χωρίς να παριστάνω ολόκληρη ομάδα.",
-      body: "Τι έκανα προσωπικά. Τι συντόνισα. Ποιοι άλλοι συμμετείχαν.",
+      body: "Τι έκανα προσωπικά. Τι συντόνισα. Ποιοι άλλοι συμμετείχαν. Η δική μου ευθύνη είναι να μετατρέπω διαφορετικές ειδικότητες σε μία συνεκτική εκτέλεση: σωστό brief, κατάλληλος owner, σαφής προθεσμία, ποιοτικός έλεγχος και καταγεγραμμένη απόφαση.",
       roles: ["Designer", "Translator", "Editor", "Photographer", "Videographer", "Creator", "Performance Specialist"],
       closing: "Good People. Better Projects.",
     },
@@ -163,7 +225,7 @@ export const siteCopy = {
       eyebrow: "ABOUT",
       title: "Marketing ήταν η αρχή. Όχι το όριο.",
       body:
-        "Ξεκίνησα από το marketing και το περιεχόμενο, και σταδιακά εξελίχθηκα μέσα από ιστοσελίδες, analytics, integrations, custom εφαρμογές, automation και project leadership.",
+        "Ξεκίνησα από το marketing και το περιεχόμενο και σταδιακά πέρασα στη στρατηγική, τα websites, τα analytics, τα integrations, τις custom εφαρμογές και το project leadership. Σήμερα αναλαμβάνω projects στα οποία πρέπει να συνδεθούν διαφορετικοί άνθρωποι και συστήματα — από τον πελάτη και τη δημιουργική ομάδα έως το development, το performance marketing και το reporting. Ο ρόλος μου είναι να μετατρέπω αυτή την πολυπλοκότητα σε καθαρό πλάνο, συγκεκριμένες ευθύνες και λειτουργικό αποτέλεσμα.",
       cvPrompt: "Θέλετε μια πιο συνοπτική εικόνα της εμπειρίας και των δεξιοτήτων μου;",
       button: "Λήψη βιογραφικού ↓",
       storyButton: "Η διαδρομή μου →",
@@ -201,13 +263,13 @@ export const siteCopy = {
       eyebrow: "LET'S BUILD TOGETHER",
       title: "Έχετε ένα project που χρειάζεται να συνδεθούν περισσότερα από ένα κομμάτια;",
       body:
-        "Ας μιλήσουμε για στρατηγική, ιστοσελίδα, περιεχόμενο και αυτοματοποίηση — και για το πώς όλα αυτά μπορούν να δουλεύουν μαζί.",
+        "Ας μιλήσουμε για στρατηγική, project leadership, website, περιεχόμενο και automation — και για το πώς άνθρωποι, εργαλεία και παραδοτέα μπορούν να λειτουργούν ως ένα ενιαίο σύστημα.",
       button: "Ας συζητήσουμε →",
       closing: "Σωστές ιδέες. Πραγματικά αποτελέσματα.",
     },
     footer: {
       name: "Διονύσης Ηλιόπουλος",
-      descriptor: "Digital Strategy · Content · Web · AI",
+      descriptor: "Digital Strategy · Project Leadership · Web · AI",
       location: "Καλαμάτα, Ελλάδα",
       links: "LinkedIn · Upwork",
     },
@@ -227,16 +289,17 @@ export const siteCopy = {
     nav: {
       work: "Work",
       capabilities: "Capabilities",
+      leadership: "Leadership",
       about: "About",
       contact: "Contact",
       talk: "Let's talk →",
     },
     hero: {
-      eyebrow: "DIGITAL STRATEGY · CONTENT · WEB · AI",
+      eyebrow: "DIGITAL STRATEGY · PROJECT LEADERSHIP · WEB · AI",
       title: "Strategy, content and technology.",
       accent: "In one connected digital project.",
       description:
-        "I connect strategy, creativity, technology and the right people around each project to create meaningful results.",
+        "I lead complex digital projects from strategy and planning through team coordination, execution and reporting. I connect people, tools and deliverables into a clear operating system.",
       primary: "View my work →",
       secondary: "Let's talk",
       location: "⌖ Kalamata, Greece · Collaborations across Greece & remotely",
@@ -246,8 +309,8 @@ export const siteCopy = {
       noteD: "Digital product",
       metric: "+40%",
       metricLabel: "Leads growth",
-      words: ["Ideas", "Strategy", "Content", "Technology", "People"],
-      greekWords: ["Strategy", "Collaboration.", "Results."],
+      words: ["Ideas", "Strategy", "Leadership", "Technology", "People"],
+      greekWords: ["Strategy", "Coordination.", "Results."],
     },
     selected: {
       eyebrow: "SELECTED WORK",
@@ -264,7 +327,7 @@ export const siteCopy = {
       title: "What is needed, when it is needed.",
       link: "Explore capabilities →",
       items: [
-        ["Strategy & Project Leadership", "From the big picture to delivery."],
+        ["Strategy & Project Leadership", "Scope, teams, dependencies, approvals and delivery — from business objective to completion."],
         ["Websites & Digital Products", "Websites and digital products built to work."],
         ["Content & Social", "Content with purpose and consistency."],
         ["AI & Automation", "Automation that saves time and creates opportunities."],
@@ -272,19 +335,80 @@ export const siteCopy = {
         ["Advertising & Campaigns", "Targeted campaigns with measurable outcomes."],
       ],
     },
+    projectLeadership: {
+      eyebrow: "PROJECT LEADERSHIP",
+      title: "From brief to delivery — with clear ownership.",
+      intro:
+        "A complex digital project needs more than good ideas. It needs clear scope, the right sequence of work, defined owners, timely decisions and constant visibility into what is complete, what is pending and what may cause delay.",
+      items: [
+        {
+          number: "01",
+          title: "Project Architecture",
+          body: "I turn the business objective into phases, deliverables, tasks, dependencies and approval gates.",
+        },
+        {
+          number: "02",
+          title: "Team & Stakeholder Coordination",
+          body: "I coordinate clients and specialists through clear briefs, owners, deadlines and next actions.",
+        },
+        {
+          number: "03",
+          title: "Scope, Risk & Quality Control",
+          body: "I track blockers, revisions, scope changes, extra work, QA and launch readiness.",
+        },
+        {
+          number: "04",
+          title: "Reporting & Operational Visibility",
+          body: "I connect tasks, files, approvals and KPIs so both the team and the client can see the real state of the project.",
+        },
+      ],
+      flow: ["Scope", "Owners", "Dependencies", "Execution", "Approval", "Reporting"],
+    },
+    projectOperations: {
+      eyebrow: "PROJECT OPERATIONS",
+      title: "How I organise a complex digital project.",
+      intro:
+        "When a project includes multiple specialists, deliverables, approvals and data, the goal is not to add more tools. It is to create a system that shows who owns what, what has been approved, what is pending and what happens next.",
+      systemsLabel: "OPERATING SYSTEMS I BUILD",
+      systems: [
+        {
+          title: "ASANA",
+          subtitle: "Execution & Ownership",
+          body: "Tasks, owners, deadlines, dependencies and blockers in one shared execution view.",
+        },
+        {
+          title: "GOOGLE DRIVE",
+          subtitle: "Files & Version Control",
+          body: "Working files, approved versions, final assets and evidence with clear structure and access.",
+        },
+        {
+          title: "GOOGLE SHEETS",
+          subtitle: "Reporting & Control",
+          body: "Deliverables, KPIs, paid activity, revisions and extra hours in a structured reporting layer.",
+        },
+        {
+          title: "CLIENT APPROVAL FLOW",
+          subtitle: "Decisions & Audit Trail",
+          body: "Approvals, rejection reasons, revision history and notifications so decisions do not get lost.",
+        },
+      ],
+      flow: ["Brief", "Scope", "Owners", "Execution", "Review", "Approval", "Reporting"],
+      closing:
+        "Project management, to me, is not about more meetings. It is about less ambiguity, fewer lost decisions and clearer accountability.",
+    },
     process: {
       eyebrow: "PROCESS",
-      title: "A simple, clear way of working.",
+      title: "A clear way to keep a project moving.",
       items: [
-        ["01", "Understand", "What is actually needed?"],
-        ["02", "Research", "Data, competition, opportunities."],
-        ["03", "Strategy", "A clear direction and plan."],
-        ["04", "Design", "Ideas turned into action."],
-        ["05", "Deliver", "With consistency and quality."],
-        ["06", "Improve", "Measure, learn, evolve."],
+        ["01", "Discovery & Scope", "Goals, constraints, stakeholders and definition of the real problem."],
+        ["02", "Project Architecture", "Phases, deliverables, owners, dependencies, tools and approval points."],
+        ["03", "Briefing & Coordination", "The right inputs, clear responsibilities and a shared understanding of direction."],
+        ["04", "Execution & Quality Control", "Production, reviews, blockers, versions and quality assurance."],
+        ["05", "Approval & Delivery", "A defined version, recorded decision and controlled handover."],
+        ["06", "Reporting & Improvement", "KPIs, learnings, next priorities and continuous improvement of the system."],
       ],
       statement:
-        "I do not start with which tool we will use. I start with what needs to work better.",
+        "Every stage should leave behind a clear decision, an owner and a next step.",
     },
     ai: {
       eyebrow: "AI & AUTOMATION",
@@ -322,7 +446,7 @@ export const siteCopy = {
     collaboration: {
       eyebrow: "COLLABORATION",
       title: "Personal responsibility, without pretending to be an entire team.",
-      body: "What I did personally. What I coordinated. Who else contributed.",
+      body: "What I did personally. What I coordinated. Who else contributed. My responsibility is to turn different specialisms into one coherent execution: the right brief, the right owner, a clear deadline, quality control and a recorded decision.",
       roles: ["Designer", "Translator", "Editor", "Photographer", "Videographer", "Creator", "Performance Specialist"],
       closing: "Good People. Better Projects.",
     },
@@ -330,7 +454,7 @@ export const siteCopy = {
       eyebrow: "ABOUT",
       title: "Marketing was the starting point. Not the limit.",
       body:
-        "I started in marketing and content, then expanded through websites, analytics, integrations, custom applications, automation and project leadership.",
+        "I started in marketing and content and gradually moved into strategy, websites, analytics, integrations, custom applications, automation and project leadership. Today I take on projects where different people and systems need to work together — from the client and creative team to development, performance marketing and reporting. My role is to turn that complexity into a clear plan, defined responsibilities and a working result.",
       cvPrompt: "Prefer a concise overview of my experience and skills?",
       button: "Download CV ↓",
       storyButton: "My journey →",
@@ -368,13 +492,13 @@ export const siteCopy = {
       eyebrow: "LET'S BUILD TOGETHER",
       title: "Have a project that needs more than one piece to work together?",
       body:
-        "Let's talk about strategy, websites, content and automation — and how they can work as one connected system.",
+        "Let's talk about strategy, project leadership, websites, content and automation — and how people, tools and deliverables can operate as one connected system.",
       button: "Let's talk →",
       closing: "Right ideas. Real results.",
     },
     footer: {
       name: "Dionisios Iliopoulos",
-      descriptor: "Digital Strategy · Content · Web · AI",
+      descriptor: "Digital Strategy · Project Leadership · Web · AI",
       location: "Kalamata, Greece",
       links: "LinkedIn · Upwork",
     },
