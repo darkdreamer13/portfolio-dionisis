@@ -6,14 +6,14 @@ import { SITE_URL } from "@/lib/site";
 
 const metadataByLocale = {
   el: {
-    title: "Διονύσης Ηλιόπουλος | Digital Strategy, Web, Content & AI",
+    title: "Διονύσης Ηλιόπουλος | Digital Strategy, Project Leadership, Web & AI",
     description:
-      "Portfolio του Διονύση Ηλιόπουλου: digital strategy, Next.js websites, content, AI automations και project leadership για επιχειρήσεις και brands.",
+      "Portfolio του Διονύση Ηλιόπουλου: digital strategy, project leadership, Next.js websites, AI automations και συντονισμός σύνθετων digital projects.",
   },
   en: {
-    title: "Dionisios Iliopoulos | Digital Strategy, Web, Content & AI",
+    title: "Dionisios Iliopoulos | Digital Strategy, Project Leadership, Web & AI",
     description:
-      "Portfolio of Dionisios Iliopoulos: digital strategy, Next.js websites, content, AI automation and project leadership for businesses and brands.",
+      "Portfolio of Dionisios Iliopoulos: digital strategy, project leadership, Next.js websites, AI automation and cross-functional digital delivery.",
   },
 } as const;
 
