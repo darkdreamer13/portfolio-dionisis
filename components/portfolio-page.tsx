@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import dynamic from "next/dynamic";
+const AIVisualsModal = dynamic(() => import("@/components/ai-visuals-modal"));
 import { useCallback, useEffect, useMemo, useState } from "react";
 import ProjectModal from "@/components/project-modal";
 import MoreWorkModal from "@/components/more-work-modal";
@@ -32,6 +34,7 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [selectedMoreWorkId, setSelectedMoreWorkId] = useState<string | null>(null);
   const [profileModal, setProfileModal] = useState<"about" | "thinking" | null>(null);
+  const [aiVisualsOpen, setAIVisualsOpen] = useState(false);
   const [productionModalOpen, setProductionModalOpen] = useState(false);
   const [moreWorkIndex, setMoreWorkIndex] = useState(0);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
@@ -77,6 +80,27 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
     const timer = window.setInterval(() => rotateMoreWork(1), 8000);
     return () => window.clearInterval(timer);
   }, [moreWorkCases.length, rotateMoreWork, selectedMoreWorkId]);
+
+  const closeAIVisuals = useCallback(() => {
+    setAIVisualsOpen(false);
+    if (window.location.hash === "#ai-visuals") {
+      window.history.replaceState(null, "", window.location.pathname + window.location.search);
+    }
+  }, []);
+
+  const openAIVisuals = useCallback(() => {
+    setSelectedId(null);
+    setSelectedMoreWorkId(null);
+    setAIVisualsOpen(true);
+    window.history.replaceState(null, "", "#ai-visuals");
+  }, []);
+
+  useEffect(() => {
+    const syncAIHash = () => setAIVisualsOpen(window.location.hash === "#ai-visuals");
+    syncAIHash();
+    window.addEventListener("hashchange", syncAIHash);
+    return () => window.removeEventListener("hashchange", syncAIHash);
+  }, []);
 
   const closeProject = useCallback(() => {
     setSelectedId(null);
@@ -376,6 +400,18 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
           ))}
         </div>
 
+        <article className="ai-visuals-entry">
+          <div>
+            <h3>AI Visuals &amp; Creative Production</h3>
+            <p>{locale === "el"
+              ? "Δημιουργία και επεξεργασία εικόνων με ChatGPT Image Generation και Midjourney. Συνδυάζω πραγματική φωτογραφία με AI για αλλαγές περιβάλλοντος, προσθήκη στοιχείων και διαφημιστικά δημιουργικά."
+              : "Image creation and editing with ChatGPT Image Generation and Midjourney. I combine real photography with AI to transform environments, add elements and produce advertising creatives."}</p>
+          </div>
+          <button type="button" className="button button-primary" onClick={openAIVisuals}>
+            {locale === "el" ? "Δείτε επιλεγμένα έργα ↗" : "Explore selected visuals ↗"}
+          </button>
+        </article>
+
         <blockquote className="ai-highlight">
           {copy.ai.highlight}
         </blockquote>
@@ -554,7 +590,9 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
         />
       ) : null}
 
-      {!selectedProject && !selectedMoreWork && !profileModal && !productionModalOpen ? (
+      {aiVisualsOpen ? <AIVisualsModal locale={locale} onClose={closeAIVisuals} /> : null}
+
+      {!selectedProject && !selectedMoreWork && !profileModal && !productionModalOpen && !aiVisualsOpen ? (
         <FloatingActions locale={locale} />
       ) : null}
     </main>
