@@ -405,8 +405,8 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
             <div className="eyebrow ai-eyebrow">AI SYSTEMS · REAL-WORLD APPLICATION</div>
             <h3>Promoters AI Creative Infrastructure</h3>
             <p>{locale === "el"
-              ? "Πώς μπορεί ένας AI agent να αναλάβει μια πραγματική εργασία παραγωγής και όχι απλώς να δώσει οδηγίες; Δύο ανεξάρτητα περιβάλλοντα επιτρέπουν ελεγχόμενη εκτέλεση σε cloud Linux και φυσικό Mac, με παρακολούθηση, παύση και ανθρώπινη έγκριση όπου απαιτείται."
-              : "How can an AI agent actually carry out production work instead of only suggesting steps? Two independent environments enable controlled execution in cloud Linux and on a physical Mac, with progress tracking, pauses and human approval when needed."}</p>
+              ? "Περιγράφεις την εργασία με απλά λόγια. Ο AI agent χρησιμοποιεί πραγματικό υπολογιστή, εγκατεστημένες εφαρμογές και αρχεία για να εκτελέσει τα υποστηριζόμενα βήματα. Δύο ανεξάρτητα περιβάλλοντα — Linux στο cloud και Mac mini — επιτρέπουν παρακολούθηση και ανθρώπινο έλεγχο."
+              : "Describe a task in everyday language. The AI agent uses a real computing environment, installed applications and files to carry out supported steps. Two independent platforms — cloud Linux and Mac mini — provide progress tracking and human control."}</p>
           </div>
           <Link className="button button-primary" href={`/${locale}/projects/promoters-ai-infrastructure`}>{locale === "el" ? "Δείτε πώς λειτουργεί ↗" : "See how it works ↗"}</Link>
         </article>
