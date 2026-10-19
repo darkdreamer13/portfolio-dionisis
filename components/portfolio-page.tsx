@@ -267,13 +267,6 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
         </div>
       </section>
 
-      <section style={{background:"#101827",color:"#f8fafc",padding:"40px max(24px, calc((100vw - 1120px)/2))"}} aria-label="Featured AI infrastructure project">
-        <p style={{fontSize:11,letterSpacing:2,color:"#a5bdf1",marginBottom:12}}>FEATURED AI SYSTEMS PROJECT · 2026</p>
-        <h2 style={{fontSize:"clamp(25px,3vw,39px)",margin:"0 0 12px",fontWeight:700}}>Promoters AI Creative Infrastructure</h2>
-        <p style={{maxWidth:760,lineHeight:1.65,color:"#ccd6e6"}}>{locale === "el" ? "Δύο ανεξάρτητες υποδομές AI automation: cloud creative workspace και native Mac workstation, με έλεγχο εργασιών και ανθρώπινη επίβλεψη." : "Two independent AI automation platforms: a cloud creative workspace and a native Mac workstation, with controlled workflows and human oversight."}</p>
-        <Link href={`/${locale}/projects/promoters-ai-infrastructure`} style={{display:"inline-flex",marginTop:16,border:"1px solid #91acdc",borderRadius:8,padding:"12px 18px",color:"white"}}>{locale === "el" ? "Δείτε το case study ↗" : "Explore the case study ↗"}</Link>
-      </section>
-
       <div id="work" className="section-anchor-wrap">
       <section className="section section-base selected-work desktop-only">
         <div className="section-heading">
@@ -406,6 +399,17 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
             </article>
           ))}
         </div>
+
+        <article className="ai-visuals-entry" style={{marginBottom:24}}>
+          <div>
+            <div className="eyebrow ai-eyebrow">AI SYSTEMS · REAL-WORLD APPLICATION</div>
+            <h3>Promoters AI Creative Infrastructure</h3>
+            <p>{locale === "el"
+              ? "Πώς μπορεί ένας AI agent να αναλάβει μια πραγματική εργασία παραγωγής και όχι απλώς να δώσει οδηγίες; Δύο ανεξάρτητα περιβάλλοντα επιτρέπουν ελεγχόμενη εκτέλεση σε cloud Linux και φυσικό Mac, με παρακολούθηση, παύση και ανθρώπινη έγκριση όπου απαιτείται."
+              : "How can an AI agent actually carry out production work instead of only suggesting steps? Two independent environments enable controlled execution in cloud Linux and on a physical Mac, with progress tracking, pauses and human approval when needed."}</p>
+          </div>
+          <Link className="button button-primary" href={`/${locale}/projects/promoters-ai-infrastructure`}>{locale === "el" ? "Δείτε πώς λειτουργεί ↗" : "See how it works ↗"}</Link>
+        </article>
 
         <article className="ai-visuals-entry">
           <div>
