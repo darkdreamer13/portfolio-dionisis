@@ -267,6 +267,13 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
         </div>
       </section>
 
+      <section style={{background:"#101827",color:"#f8fafc",padding:"40px max(24px, calc((100vw - 1120px)/2))"}} aria-label="Featured AI infrastructure project">
+        <p style={{fontSize:11,letterSpacing:2,color:"#a5bdf1",marginBottom:12}}>FEATURED AI SYSTEMS PROJECT · 2026</p>
+        <h2 style={{fontSize:"clamp(25px,3vw,39px)",margin:"0 0 12px",fontWeight:700}}>Promoters AI Creative Infrastructure</h2>
+        <p style={{maxWidth:760,lineHeight:1.65,color:"#ccd6e6"}}>{locale === "el" ? "Δύο ανεξάρτητες υποδομές AI automation: cloud creative workspace και native Mac workstation, με έλεγχο εργασιών και ανθρώπινη επίβλεψη." : "Two independent AI automation platforms: a cloud creative workspace and a native Mac workstation, with controlled workflows and human oversight."}</p>
+        <Link href={`/${locale}/projects/promoters-ai-infrastructure`} style={{display:"inline-flex",marginTop:16,border:"1px solid #91acdc",borderRadius:8,padding:"12px 18px",color:"white"}}>{locale === "el" ? "Δείτε το case study ↗" : "Explore the case study ↗"}</Link>
+      </section>
+
       <div id="work" className="section-anchor-wrap">
       <section className="section section-base selected-work desktop-only">
         <div className="section-heading">
