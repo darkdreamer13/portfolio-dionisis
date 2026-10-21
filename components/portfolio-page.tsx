@@ -56,7 +56,7 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
       return {
         project: moreWorkCases[sourceIndex],
         descriptor:
-          copy.moreWork.items[sourceIndex]?.[1] ??
+          copy.moreWork.items.find(([title]) => title === moreWorkCases[sourceIndex].title)?.[1] ??
           moreWorkCases[sourceIndex].tags.slice(0, 2).join(" · "),
       };
     });
