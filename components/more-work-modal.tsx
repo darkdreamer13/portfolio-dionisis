@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import type { Locale, MoreWorkCase } from "@/lib/content";
+import ProjectShowcase from "@/components/project-showcase";
 
 export default function MoreWorkModal({
   project,
@@ -105,6 +106,7 @@ export default function MoreWorkModal({
             </section>
           ) : null}
 
+          <ProjectShowcase projectId={project.id} locale={locale} />
           <blockquote>{project.closing}</blockquote>
 
           {project.liveUrl ? (

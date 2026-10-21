@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { ProjectAsset, ProjectCase } from "@/lib/content";
+import ProjectShowcase from "@/components/project-showcase";
 
 type ModalLabels = {
   close: string;
@@ -76,7 +77,9 @@ export default function ProjectModal({
   project,
   labels,
   onClose,
+  locale,
 }: {
+  locale: "el" | "en";
   project: ProjectCase;
   labels: ModalLabels;
   onClose: () => void;
@@ -183,6 +186,7 @@ export default function ProjectModal({
             onOpen={setLightboxAsset}
           />
 
+          <ProjectShowcase projectId={project.id} locale={locale} />
           <div className="case-content-grid">
             <div className="case-story-column">
               <div className="case-story">

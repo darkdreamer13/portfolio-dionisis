@@ -247,6 +247,7 @@ export const siteCopy = {
         ["Eleni Stathopoulou", "Branding · Web · SEO"],
         ["Kiosque", "Web · Local SEO · Social"],
         ["Ketobox", "Marketing Strategy · Content · SEO"],
+        ["Vive Bailando", "Dance School · Social Media · Content"],
       ],
     },
     results: {
@@ -476,6 +477,7 @@ export const siteCopy = {
         ["Eleni Stathopoulou", "Branding · Web · SEO"],
         ["Kiosque", "Web · Local SEO · Social"],
         ["Ketobox", "Marketing Strategy · Content · SEO"],
+        ["Vive Bailando", "Dance School · Social Media · Content"],
       ],
     },
     results: {
@@ -1236,6 +1238,15 @@ const greekMoreWorkCases: MoreWorkCase[] = [
   },
 
   {
+    id: "vive-bailando",
+    title: "Vive Bailando",
+    tags: ["Dance School", "Social Media Management", "Content Creation"],
+    logo: "/assets/more-work/vive-bailando.webp",
+    paragraphs: ["Διαχείριση social media και δημιουργία ψηφιακού περιεχομένου για τη σχολή χορού Vive Bailando, με στόχο την ανάδειξη των μαθημάτων, των δραστηριοτήτων και της ταυτότητας της σχολής μέσα από οργανωμένη και δημιουργική επικοινωνία."],
+    role: "Social Media Management · Content Creation",
+    closing: "Η δημιουργικότητα και η κίνηση της σχολής αποκτούν παρουσία και στα ψηφιακά κανάλια.",
+  },
+  {
     id: "ketobox",
     title: "Ketobox",
     period: "2024",
@@ -1252,6 +1263,11 @@ const greekMoreWorkCases: MoreWorkCase[] = [
 ];
 
 const englishMoreWorkCases: MoreWorkCase[] = [
+  {
+    ...greekMoreWorkCases.find(item => item.id === "vive-bailando")!,
+    paragraphs: ["Social media management and digital content creation for Vive Bailando dance school, highlighting classes, activities and the school identity through creative communication."],
+    closing: "Bringing the school’s creativity and movement to its digital channels.",
+  },
   {
     ...greekMoreWorkCases[0],
     tags: ["Social Media", "Content", "Community Management"],

@@ -579,7 +579,7 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
       </footer>
 
       {selectedProject ? (
-        <ProjectModal project={selectedProject} labels={copy.modal} onClose={closeProject} />
+        <ProjectModal locale={locale} project={selectedProject} labels={copy.modal} onClose={closeProject} />
       ) : null}
 
       {selectedMoreWork ? (
