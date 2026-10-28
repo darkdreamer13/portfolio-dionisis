@@ -9,9 +9,13 @@ import MoreWorkModal from "@/components/more-work-modal";
 import ProfileModal from "@/components/profile-modal";
 import ProductionModal from "@/components/production-modal";
 import FloatingActions from "@/components/floating-actions";
-import ProjectLeadershipSection from "@/components/project-leadership-section";
-import ProjectOperationsSection from "@/components/project-operations-section";
-import { MobileCapabilities, MobileProcess, MobileSelectedWork } from "@/components/mobile-portfolio-sections";
+import { MobileCapabilities } from "@/components/mobile-portfolio-sections";
+import ProjectVisual from "@/components/v3/project-visual";
+import ResultsStrip from "@/components/v3/results-strip";
+import Testimonials from "@/components/v3/testimonials";
+import LeadershipMerged from "@/components/v3/leadership-merged";
+import MobileWorkCarousel from "@/components/v3/mobile-work-carousel";
+import { caseLabels, projectExtras } from "@/lib/v3-content";
 import { moreWorkCasesByLocale, projectsByLocale, siteCopy, type Locale } from "@/lib/content";
 
 const productionImages = [
@@ -38,6 +42,9 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
   const [productionModalOpen, setProductionModalOpen] = useState(false);
   const [moreWorkIndex, setMoreWorkIndex] = useState(0);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
+  const [aboutOpen, setAboutOpen] = useState(false);
+  const extras = projectExtras[locale];
+  const labels = caseLabels[locale];
 
   const selectedProject = useMemo(
     () => projects.find((project) => project.id === selectedId) ?? null,
@@ -102,18 +109,40 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
     return () => window.removeEventListener("hashchange", syncAIHash);
   }, []);
 
+  const projectPath = useCallback((id: string) => "/" + locale + "/projects/" + id, [locale]);
+
   const closeProject = useCallback(() => {
     setSelectedId(null);
-    if (window.location.hash.startsWith("#case-")) {
-      window.history.replaceState(null, "", window.location.pathname + window.location.search);
+    if (window.location.pathname.includes("/projects/")) {
+      if (window.history.state && window.history.state.v3CaseModal) {
+        window.history.back();
+      } else {
+        window.history.replaceState(null, "", "/" + locale + "#work");
+      }
     }
-  }, []);
+  }, [locale]);
 
-  const openProject = useCallback((id: string) => {
-    setSelectedMoreWorkId(null);
-    setSelectedId(id);
-    window.history.replaceState(null, "", "#case-" + id);
-  }, []);
+  const openProject = useCallback(
+    (id: string) => {
+      setSelectedMoreWorkId(null);
+      const alreadyOpen = window.location.pathname.includes("/projects/");
+      setSelectedId(id);
+      const state = { ...(window.history.state ?? {}), v3CaseModal: true };
+      if (alreadyOpen) window.history.replaceState(state, "", projectPath(id));
+      else window.history.pushState(state, "", projectPath(id));
+    },
+    [projectPath],
+  );
+
+  useEffect(() => {
+    const onPopState = () => {
+      const match = window.location.pathname.match(/\/projects\/([^/]+)$/);
+      if (match && projects.some((project) => project.id === match[1])) setSelectedId(match[1]);
+      else setSelectedId(null);
+    };
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
+  }, [projects]);
 
   const closeMoreWork = useCallback(() => {
     setSelectedMoreWorkId(null);
@@ -134,7 +163,8 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
     if (window.location.hash.startsWith("#case-")) {
       const hashId = window.location.hash.replace("#case-", "");
       if (hashId && projects.some((project) => project.id === hashId)) {
-        setSelectedId(hashId);
+        window.history.replaceState(null, "", projectPath(hashId));
+        window.location.replace(projectPath(hashId));
       }
     }
 
@@ -144,7 +174,7 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
         setSelectedMoreWorkId(hashId);
       }
     }
-  }, [locale, projects, moreWorkCases]);
+  }, [locale, projects, moreWorkCases, projectPath]);
 
   return (
     <main>
@@ -210,19 +240,7 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
           <h1>
             <span className="hero-title-default">{copy.hero.title}</span>
             <span className="hero-title-desktop">
-              {locale === "el" ? (
-                <>
-                  Στρατηγική, περιεχόμενο
-                  <br />
-                  και τεχνολογία.
-                </>
-              ) : (
-                <>
-                  Strategy, content
-                  <br />
-                  and technology.
-                </>
-              )}
+              {copy.hero.title}
             </span>
           </h1>
           <p className="hero-accent">{copy.hero.accent}</p>
@@ -235,37 +253,16 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
               {copy.hero.secondary}
             </a>
           </div>
-          <p className="hero-location">{copy.hero.location}</p>
         </div>
 
-        <div className="hero-visual" aria-label="Portrait and digital project highlights">
-          <img className="hero-photo" src="/assets/hero.png" alt="" />
+        <div className="hero-visual">
+          <img className="hero-photo" src="/assets/hero.png" alt={locale === "el" ? "Ο Διονύσης Ηλιόπουλος" : "Dionisios Iliopoulos"} />
           <div className="hero-fade hero-fade-left" />
           <div className="hero-fade hero-fade-right" />
-          <div className="hero-note hero-note-a">
-            <strong>{copy.hero.noteA}</strong>
-            <span>{copy.hero.noteB}</span>
-          </div>
-          <div className="hero-note hero-note-b">
-            <strong>{copy.hero.noteC}</strong>
-            <span>{copy.hero.noteD}</span>
-          </div>
-          <div className="hero-note hero-metric">
-            <strong>{copy.hero.metric}</strong>
-            <span>{copy.hero.metricLabel}</span>
-          </div>
-          <div className="hero-word-list">
-            {copy.hero.words.map((word) => (
-              <span key={word}>{word}</span>
-            ))}
-          </div>
-          <div className="hero-greek-list">
-            {copy.hero.greekWords.map((word) => (
-              <span key={word}>{word}</span>
-            ))}
-          </div>
         </div>
       </section>
+
+      <ResultsStrip copy={copy.results} />
 
       <div id="work" className="section-anchor-wrap">
       <section className="section section-base selected-work desktop-only">
@@ -279,19 +276,20 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
               <button
                 key={project.id}
                 type="button"
-                className="project-card"
+                className="project-card v3-project-card"
                 data-project={project.id}
                 onClick={() => openProject(project.id)}
                 aria-label={project.title + " — " + project.tagline}
               >
-                <span
-                  className="project-card-visual"
-                  style={{ background: project.cardBackground }}
-                >
-                  <img src={project.logo} alt="" />
-                </span>
+                <ProjectVisual
+                  project={project}
+                  extra={extras[project.id]}
+                  sizes="(max-width: 1180px) 50vw, 340px"
+                  className="project-card-visual v3-card-visual"
+                />
                 <span className="project-card-copy">
                   <strong>{project.title}</strong>
+                  {extras[project.id] ? <em className="v3-proof">{extras[project.id].proof}</em> : null}
                   <span>{project.tagline}</span>
                   <small>{project.cardCategories}</small>
                 </span>
@@ -319,7 +317,7 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
           </aside>
         </div>
       </section>
-      <MobileSelectedWork
+      <MobileWorkCarousel
         locale={locale}
         copy={copy.selected}
         projects={projects}
@@ -327,6 +325,8 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
         onOpenThinking={() => setProfileModal("thinking")}
       />
       </div>
+
+      <Testimonials locale={locale} />
 
       <div id="capabilities" className="section-anchor-wrap">
       <section className="section capabilities desktop-only">
@@ -350,32 +350,7 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
       <MobileCapabilities locale={locale} copy={copy.capabilities} />
       </div>
 
-      <ProjectLeadershipSection locale={locale} copy={copy.projectLeadership} />
-
-      <section className="section process desktop-only">
-        <div className="section-heading">
-          <div className="eyebrow">{copy.process.eyebrow}</div>
-          <h2>{copy.process.title}</h2>
-        </div>
-        <div className="process-grid">
-          <div className="process-steps">
-            {copy.process.items.map(([number, title, description]) => (
-              <article key={number} className="process-step">
-                <div className="process-number">{number}</div>
-                <h3>{title}</h3>
-                <p>{description}</p>
-              </article>
-            ))}
-          </div>
-          <div className="process-statement">
-            <div className="blue-rule" />
-            <p>{copy.process.statement}</p>
-          </div>
-        </div>
-      </section>
-      <MobileProcess locale={locale} copy={copy.process} />
-
-      <ProjectOperationsSection locale={locale} copy={copy.projectOperations} />
+      <LeadershipMerged locale={locale} copy={copy} />
 
       <section className="ai-section">
         <div className="ai-orb" aria-hidden="true" />
@@ -390,7 +365,7 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
           </div>
         </div>
 
-        <div className="ai-capability-grid">
+        <div className="ai-capability-grid v3-swipe">
           {copy.ai.items.map((item, index) => (
             <article key={item.title} className="ai-capability-card">
               <span>{String(index + 1).padStart(2, "0")}</span>
@@ -400,6 +375,7 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
           ))}
         </div>
 
+        <div className="v3-ai-entries v3-swipe">
         <article className="ai-visuals-entry" style={{marginBottom:24}}>
           <div>
             <div className="eyebrow ai-eyebrow">AI SYSTEMS · REAL-WORLD APPLICATION</div>
@@ -422,6 +398,7 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
             {locale === "el" ? "Δείτε επιλεγμένα έργα ↗" : "Explore selected visuals ↗"}
           </button>
         </article>
+        </div>
 
         <blockquote className="ai-highlight">
           {copy.ai.highlight}
@@ -513,7 +490,12 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
         <article className="about-block">
           <div className="eyebrow">{copy.about.eyebrow}</div>
           <h2>{copy.about.title}</h2>
-          <p>{copy.about.body}</p>
+          <p className={"v3-about-body" + (aboutOpen ? " is-open" : "")}>{copy.about.body}</p>
+          {!aboutOpen ? (
+            <button type="button" className="v3-read-more mobile-only" onClick={() => setAboutOpen(true)}>
+              {labels.readMore}
+            </button>
+          ) : null}
           <p className="about-cv-prompt">{copy.about.cvPrompt}</p>
           <div className="about-actions">
             <a
@@ -579,7 +561,18 @@ export default function PortfolioPage({ locale }: { locale: Locale }) {
       </footer>
 
       {selectedProject ? (
-        <ProjectModal locale={locale} project={selectedProject} labels={copy.modal} onClose={closeProject} />
+        <ProjectModal
+          locale={locale}
+          project={selectedProject}
+          labels={copy.modal}
+          onClose={closeProject}
+          extra={extras[selectedProject.id]}
+          prevProject={projects[(projects.indexOf(selectedProject) - 1 + projects.length) % projects.length]}
+          nextProject={projects[(projects.indexOf(selectedProject) + 1) % projects.length]}
+          onNavigate={openProject}
+          caseHref={projectPath(selectedProject.id)}
+          contactHref={EMAIL_HREF}
+        />
       ) : null}
 
       {selectedMoreWork ? (

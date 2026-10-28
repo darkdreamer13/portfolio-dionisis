@@ -3,6 +3,8 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { ProjectAsset, ProjectCase } from "@/lib/content";
 import ProjectShowcase from "@/components/project-showcase";
+import CaseImage from "@/components/v3/case-image";
+import { caseLabels, type ProjectExtra } from "@/lib/v3-content";
 
 type ModalLabels = {
   close: string;
@@ -62,7 +64,7 @@ function MediaGallery({
             aria-label={"Open image: " + asset.alt}
           >
             <span className="case-image-shell">
-              <img src={asset.src} alt={asset.alt} loading="lazy" />
+              <CaseImage src={asset.src} alt={asset.alt} sizes="(max-width: 760px) 100vw, 900px" />
               <span className="case-media-zoom" aria-hidden="true">↗</span>
             </span>
           </button>
@@ -78,12 +80,26 @@ export default function ProjectModal({
   labels,
   onClose,
   locale,
+  extra,
+  prevProject,
+  nextProject,
+  onNavigate,
+  caseHref,
+  contactHref,
 }: {
   locale: "el" | "en";
   project: ProjectCase;
   labels: ModalLabels;
   onClose: () => void;
+  extra?: ProjectExtra;
+  prevProject?: ProjectCase | null;
+  nextProject?: ProjectCase | null;
+  onNavigate?: (id: string) => void;
+  caseHref?: string;
+  contactHref?: string;
 }) {
+  const v3 = caseLabels[locale];
+  const scrollRef = useRef<HTMLElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
   const [lightboxAsset, setLightboxAsset] = useState<ProjectAsset | null>(null);
 
@@ -109,6 +125,10 @@ export default function ProjectModal({
 
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
+      if (!lightboxAsset && onNavigate) {
+        if (event.key === "ArrowRight" && nextProject) { onNavigate(nextProject.id); return; }
+        if (event.key === "ArrowLeft" && prevProject) { onNavigate(prevProject.id); return; }
+      }
       if (event.key !== "Escape") return;
       if (lightboxAsset) {
         setLightboxAsset(null);
@@ -119,11 +139,16 @@ export default function ProjectModal({
 
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [lightboxAsset, onClose]);
+  }, [lightboxAsset, onClose, onNavigate, nextProject, prevProject]);
+
+  useEffect(() => {
+    scrollRef.current?.scrollTo({ top: 0 });
+  }, [project.id]);
 
   return (
     <div className="modal-backdrop" onMouseDown={onClose}>
       <article
+        ref={scrollRef}
         className="case-modal"
         data-project={project.id}
         role="dialog"
@@ -137,6 +162,16 @@ export default function ProjectModal({
             <span className="dot">·</span>
             <span>{project.status}</span>
           </div>
+          <div className="v3-modal-actions">
+            {onNavigate && prevProject ? (
+              <button type="button" className="v3-modal-nav" onClick={() => onNavigate(prevProject.id)} aria-label={v3.previous + ": " + prevProject.title}>←</button>
+            ) : null}
+            {onNavigate && nextProject ? (
+              <button type="button" className="v3-modal-nav" onClick={() => onNavigate(nextProject.id)} aria-label={v3.next + ": " + nextProject.title}>→</button>
+            ) : null}
+            {caseHref ? (
+              <a className="v3-modal-open-page" href={caseHref}>{v3.openPage}</a>
+            ) : null}
           <button
             ref={closeRef}
             className="modal-close"
@@ -147,6 +182,7 @@ export default function ProjectModal({
             <span aria-hidden="true">×</span>
             <span>{labels.close}</span>
           </button>
+          </div>
         </header>
 
         <div className="case-modal-body">
@@ -158,6 +194,12 @@ export default function ProjectModal({
               <div className="case-kicker">{project.categories.join(" · ")}</div>
               <h2 id={"case-title-" + project.id}>{project.title}</h2>
               <p className="case-tagline">{project.tagline}</p>
+              {extra ? (
+                <div className="v3-result-box">
+                  <strong>{extra.metricValue}</strong>
+                  <span>{extra.metricLabel}</span>
+                </div>
+              ) : null}
               <div className="case-role">
                 <span>{labels.role}</span>
                 <p>{project.role}</p>
@@ -273,6 +315,22 @@ export default function ProjectModal({
             >
               {labels.visitProject}
             </a>
+          </div>
+
+          <div className="v3-case-end">
+            {nextProject && onNavigate ? (
+              <button type="button" className="v3-next-card" onClick={() => onNavigate(nextProject.id)}>
+                <span className="eyebrow">{v3.next} →</span>
+                <strong>{nextProject.title}</strong>
+                <span>{nextProject.tagline}</span>
+              </button>
+            ) : null}
+            {contactHref ? (
+              <div className="v3-cta-card">
+                <strong>{v3.similarTitle}</strong>
+                <a className="button button-primary" href={contactHref}>{v3.talkSimilar} →</a>
+              </div>
+            ) : null}
           </div>
         </div>
       </article>

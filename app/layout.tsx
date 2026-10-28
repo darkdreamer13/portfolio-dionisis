@@ -3,6 +3,7 @@ import { Manrope, Source_Sans_3 } from "next/font/google";
 import { GeistMono } from "geist/font/mono";
 import { SITE_URL } from "@/lib/site";
 import "./globals.css";
+import "./v3.css";
 
 const headingFont = Manrope({
   subsets: ["latin", "greek"],

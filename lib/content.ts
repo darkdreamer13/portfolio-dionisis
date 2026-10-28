@@ -63,16 +63,16 @@ export const siteCopy = {
       leadership: "Leadership",
       about: "Σχετικά",
       contact: "Επικοινωνία",
-      talk: "Ας συζητήσουμε →",
+      talk: "Ας μιλήσουμε →",
     },
     hero: {
-      eyebrow: "DIGITAL STRATEGY · PROJECT LEADERSHIP · WEB · AI",
-      title: "Στρατηγική, περιεχόμενο και τεχνολογία.",
-      accent: "Σε ένα ενιαίο digital project.",
+      eyebrow: "DIGITAL STRATEGY · WEB · AI — ΚΑΛΑΜΑΤΑ & REMOTE",
+      title: "Ενώνω ό,τι στο digital σας",
+      accent: "δουλεύει χωριστά.",
       description:
-        "Αναλαμβάνω σύνθετα digital projects από τη στρατηγική και τον σχεδιασμό μέχρι τον συντονισμό της ομάδας, την υλοποίηση και το reporting. Συνδέω ανθρώπους, εργαλεία και παραδοτέα σε ένα καθαρό σύστημα εργασίας.",
-      primary: "Δείτε τα έργα μου →",
-      secondary: "Ας συζητήσουμε",
+        "Website, περιεχόμενο, διαφημίσεις, εργαλεία και οι άνθρωποι που τα φτιάχνουν. Σε ένα πλάνο, με έναν υπεύθυνο, από τη στρατηγική μέχρι το launch και μετά.",
+      primary: "Δείτε τα έργα →",
+      secondary: "Ας μιλήσουμε για το project σας",
       location: "⌖ Καλαμάτα, Ελλάδα · Συνεργασίες στην Ελλάδα & εξ αποστάσεως",
       noteA: "Better brands.",
       noteB: "Real results.",
@@ -85,12 +85,12 @@ export const siteCopy = {
     },
     selected: {
       eyebrow: "SELECTED WORK",
-      title: "Η δουλειά πριν από τις περιγραφές.",
+      title: "Έξι projects. Πολλά κομμάτια. Ένα αποτέλεσμα το καθένα.",
       thinkingEyebrow: "HOW I THINK",
       thinkingTitle: "Δεν ξεκινώ από την υπηρεσία. Ξεκινώ από το πρόβλημα.",
       thinkingBody:
         "Δεν χρειάζεται κάθε project περισσότερες υπηρεσίες. Χρειάζεται τις σωστές.",
-      thinkingClosing: "Better Problems. Better Solutions.",
+      thinkingClosing: "Σωστό πρόβλημα, σωστή λύση.",
       thinkingOpen: "Πώς δουλεύω →",
     },
     capabilities: {
@@ -219,7 +219,7 @@ export const siteCopy = {
       title: "Προσωπική ευθύνη, χωρίς να παριστάνω ολόκληρη ομάδα.",
       body: "Τι έκανα προσωπικά. Τι συντόνισα. Ποιοι άλλοι συμμετείχαν. Η δική μου ευθύνη είναι να μετατρέπω διαφορετικές ειδικότητες σε μία συνεκτική εκτέλεση: σωστό brief, κατάλληλος owner, σαφής προθεσμία, ποιοτικός έλεγχος και καταγεγραμμένη απόφαση.",
       roles: ["Designer", "Translator", "Editor", "Photographer", "Videographer", "Creator", "Performance Specialist"],
-      closing: "Good People. Better Projects.",
+      closing: "Οι σωστοί άνθρωποι, στη σωστή θέση.",
     },
     about: {
       eyebrow: "ABOUT",
@@ -252,12 +252,12 @@ export const siteCopy = {
     },
     results: {
       eyebrow: "SELECTED RESULTS",
-      title: "Μετρήσιμα αποτελέσματα από πραγματικά projects.",
+      title: "Τα νούμερα, όπου μετριούνται.",
       items: [
-        ["+270%", "Instagram growth · Pralina"],
-        ["1.5M+", "Short-form video views"],
-        ["+75%", "Ticket sales · Local campaign"],
-        ["+40%", "Leads · Promoters"],
+        ["+40%", "αύξηση στα leads · Promoters"],
+        ["+70%", "υποβολές ερωτηματολογίου · Δώρα Νικολαΐδου"],
+        ["2.53%", "link CTR σε Meta Ads · L'Éclat Beauté"],
+        ["6 χρόνια", "συνεργασία · Νοτιάς Restaurant"],
       ],
     },
     cta: {
@@ -265,7 +265,7 @@ export const siteCopy = {
       title: "Έχετε ένα project που χρειάζεται να συνδεθούν περισσότερα από ένα κομμάτια;",
       body:
         "Ας μιλήσουμε για στρατηγική, project leadership, website, περιεχόμενο και automation — και για το πώς άνθρωποι, εργαλεία και παραδοτέα μπορούν να λειτουργούν ως ένα ενιαίο σύστημα.",
-      button: "Ας συζητήσουμε →",
+      button: "Ας μιλήσουμε για το project σας →",
       closing: "Σωστές ιδέες. Πραγματικά αποτελέσματα.",
     },
     footer: {
@@ -296,13 +296,13 @@ export const siteCopy = {
       talk: "Let's talk →",
     },
     hero: {
-      eyebrow: "DIGITAL STRATEGY · PROJECT LEADERSHIP · WEB · AI",
-      title: "Strategy, content and technology.",
-      accent: "In one connected digital project.",
+      eyebrow: "DIGITAL STRATEGY · WEB · AI — KALAMATA & REMOTE",
+      title: "Your digital works in pieces.",
+      accent: "I connect them.",
       description:
-        "I lead complex digital projects from strategy and planning through team coordination, execution and reporting. I connect people, tools and deliverables into a clear operating system.",
-      primary: "View my work →",
-      secondary: "Let's talk",
+        "Website, content, ads, tools, and the people who build them. One plan, one person accountable, from strategy to launch and beyond.",
+      primary: "See the work →",
+      secondary: "Let's talk about your project",
       location: "⌖ Kalamata, Greece · Collaborations across Greece & remotely",
       noteA: "Better brands.",
       noteB: "Real results.",
@@ -315,7 +315,7 @@ export const siteCopy = {
     },
     selected: {
       eyebrow: "SELECTED WORK",
-      title: "The work before the descriptions.",
+      title: "Six projects. Many moving parts. One result each.",
       thinkingEyebrow: "HOW I THINK",
       thinkingTitle: "I do not start with the service. I start with the problem.",
       thinkingBody:
@@ -482,12 +482,12 @@ export const siteCopy = {
     },
     results: {
       eyebrow: "SELECTED RESULTS",
-      title: "Measurable outcomes from real projects.",
+      title: "The numbers, where they can be measured.",
       items: [
-        ["+270%", "Instagram growth · Pralina"],
-        ["1.5M+", "Short-form video views"],
-        ["+75%", "Ticket sales · Local campaign"],
-        ["+40%", "Leads · Promoters"],
+        ["+40%", "more leads · Promoters"],
+        ["+70%", "more questionnaire submissions · Dora Nikolaidou"],
+        ["2.53%", "link CTR on Meta Ads · L'Éclat Beauté"],
+        ["6 years", "partnership · Notias Restaurant"],
       ],
     },
     cta: {
@@ -495,7 +495,7 @@ export const siteCopy = {
       title: "Have a project that needs more than one piece to work together?",
       body:
         "Let's talk about strategy, project leadership, websites, content and automation — and how people, tools and deliverables can operate as one connected system.",
-      button: "Let's talk →",
+      button: "Let's talk about your project →",
       closing: "Right ideas. Real results.",
     },
     footer: {
